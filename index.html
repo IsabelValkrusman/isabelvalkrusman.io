@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="Isabel Valkrusman — Junior Software Developer, Android & Web Developer"
+        content="Isabel Valkrusman — Junior Software Developer"
     >
 
     <link rel="stylesheet" href="style.css">
@@ -16,18 +16,7 @@
 
 <body>
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
-
-<div class="background-grid"></div>
-<div class="red-glow glow-one"></div>
-<div class="red-glow glow-two"></div>
-
-
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- NAVIGATION -->
 
 <nav class="navbar">
 
@@ -35,95 +24,56 @@
         ISABEL<span>.</span>
     </a>
 
-    <div class="menu">
+    <div class="nav-links">
 
-        <a href="#home">
-            <span>01</span>
-            HOME
-        </a>
-
-        <a href="#work">
-            <span>02</span>
-            MY WORK
-        </a>
-
-        <a href="#about">
-            <span>03</span>
-            ABOUT / CONTACT
-        </a>
+        <a href="#home">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
 
     </div>
 
     <a
         href="Isabel_Valkrusman_CV_English_Expanded.pdf"
-        class="cv-link"
         target="_blank"
+        class="cv-link"
     >
-        CV ↗
+        CV
     </a>
 
 </nav>
 
 
-<!-- =====================================================
-     HOME
-===================================================== -->
+<!-- HOME -->
 
 <header id="home" class="hero">
 
-    <div class="hero-left">
+    <div class="hero-text">
 
-        <div class="small-label">
+        <p class="eyebrow">
             JUNIOR SOFTWARE DEVELOPER
-        </div>
-
-        <h1>
-            ISABEL
-            <br>
-            <span>VALKRUSMAN</span>
-        </h1>
-
-        <div class="hero-line"></div>
-
-        <p class="hero-text">
-            I build digital products from
-            <strong>idea</strong>
-            to
-            <strong>code</strong>
-            to
-            <strong>launch.</strong>
         </p>
 
-        <div class="hero-actions">
+        <h1>
+            Isabel<br>
+            <span>Valkrusman</span>
+        </h1>
 
-            <a href="#work" class="red-button">
-                EXPLORE MY WORK
-                <span>→</span>
+        <p class="intro-text">
+            I build Android applications and web projects
+            from idea to working product.
+        </p>
+
+        <div class="hero-links">
+
+            <a href="#work" class="primary-button">
+                View my work
             </a>
 
             <a
                 href="mailto:isabel.valkrusman@gmail.com"
-                class="outline-button"
+                class="text-link"
             >
-                LET'S TALK
-            </a>
-
-        </div>
-
-        <div class="hero-socials">
-
-            <a
-                href="https://github.com/IsabelValkrusman"
-                target="_blank"
-            >
-                GITHUB ↗
-            </a>
-
-            <a
-                href="https://www.linkedin.com/in/isabel-valkrusman-35252b286"
-                target="_blank"
-            >
-                LINKEDIN ↗
+                Contact me →
             </a>
 
         </div>
@@ -131,644 +81,424 @@
     </div>
 
 
-    <!-- PHOTO -->
+    <div class="hero-photo">
 
-    <div class="hero-right">
-
-        <div class="photo-frame">
-
-            <div class="photo-number">
-                001
-            </div>
-
-            <img
-                src="profile.jpg"
-                alt="Isabel Valkrusman"
-            >
-
-            <div class="photo-caption">
-                SOFTWARE / WEB / ANDROID
-            </div>
-
-        </div>
-
-        <div class="floating-tech tech-one">
-            KOTLIN
-        </div>
-
-        <div class="floating-tech tech-two">
-            REACT
-        </div>
-
-        <div class="floating-tech tech-three">
-            DATABASES
-        </div>
+        <img
+            src="profile.jpg"
+            alt="Isabel Valkrusman"
+        >
 
     </div>
 
 </header>
 
 
-<!-- =====================================================
-     INTRO
-===================================================== -->
-
-<section class="intro">
-
-    <div class="section-number">
-        01 / 03
-    </div>
-
-    <div class="intro-content">
-
-        <div class="red-title">
-            WHAT I DO
-        </div>
-
-        <h2>
-            I turn ideas into
-            <span>real products.</span>
-        </h2>
-
-        <p>
-            I'm a Junior Software Developer with experience in
-            Android development, web development, databases and
-            real-world digital projects.
-        </p>
-
-        <p>
-            My projects range from published Android applications
-            to websites, full-stack platforms and AI-powered
-            applications.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     MY WORK
-===================================================== -->
+<!-- WORK -->
 
 <section id="work" class="work">
 
-    <div class="section-top">
+    <div class="section-header">
 
-        <div>
-            <div class="section-number">
-                02 / 03
-            </div>
+        <span>01</span>
 
-            <div class="red-title">
-                SELECTED WORK
-            </div>
-        </div>
-
-        <div class="work-count">
-            07 PROJECTS
-        </div>
+        <h2>Selected Work</h2>
 
     </div>
 
 
-    <!-- =================================================
-         PROJECT 01
-    ================================================== -->
+    <!-- PROJECT 01 -->
 
-    <article class="project-feature">
+    <a href="route66.html" class="project">
 
-        <div class="project-image route-image">
+        <div class="project-number">
+            01
+        </div>
 
+        <div class="project-image">
             <img
                 src="logo2.png"
                 alt="Route 66 Via Baltica"
             >
+        </div>
 
-            <span class="project-number">
-                01
+        <div class="project-info">
+
+            <p>ANDROID · PUBLISHED</p>
+
+            <h3>
+                Route 66
+                <span>Via Baltica</span>
+            </h3>
+
+            <p class="project-description">
+                Android travel application for discovering
+                places along the Via Baltica route.
+            </p>
+
+            <span class="project-arrow">
+                →
             </span>
 
         </div>
 
-        <div class="project-content">
+    </a>
 
-            <div class="project-category">
-                ANDROID / PUBLISHED
-            </div>
 
-            <h3>
-                Route 66
-                <br>
-                <span>Via Baltica</span>
-            </h3>
+    <!-- PROJECT 02 -->
 
-            <p>
-                A travel application covering the Via Baltica
-                route through Estonia, Latvia, Lithuania and Poland.
-            </p>
+    <a href="halinga.html" class="project">
 
-            <div class="project-tags">
-                <span>KOTLIN</span>
-                <span>ANDROID</span>
-                <span>GOOGLE MAPS</span>
-                <span>ROOM</span>
-            </div>
-
-            <a
-                href="route66.html"
-                class="project-link"
-            >
-                OPEN PROJECT
-                <span>↗</span>
-            </a>
-
+        <div class="project-number">
+            02
         </div>
 
-    </article>
-
-
-    <!-- =================================================
-         PROJECT 02
-    ================================================== -->
-
-    <article class="project-feature reverse">
-
-        <div class="project-image halinga-image">
+        <div class="project-image">
 
             <img
                 src="halinga.jpg"
                 alt="Halinga Restaurant"
             >
 
-            <span class="project-number">
-                02
+        </div>
+
+        <div class="project-info">
+
+            <p>WEB · MARKETING · EVENTS</p>
+
+            <h3>
+                Halinga
+                <span>Restaurant & Arcade</span>
+            </h3>
+
+            <p class="project-description">
+                React website and digital project for a
+                real restaurant and arcade business.
+            </p>
+
+            <span class="project-arrow">
+                →
             </span>
 
         </div>
 
-        <div class="project-content">
+    </a>
 
-            <div class="project-category">
-                WEB / MARKETING / EVENTS
-            </div>
 
-            <h3>
-                Halinga
-                <br>
-                <span>Restaurant & Arcade</span>
-            </h3>
+    <!-- PROJECT 03 -->
 
-            <p>
-                A real-world website and digital project combining
-                React development, multilingual content, social media,
-                advertising and arcade event promotion.
-            </p>
+    <a
+        href="alternative-medicine.html"
+        class="project"
+    >
 
-            <div class="project-tags">
-                <span>REACT</span>
-                <span>JAVASCRIPT</span>
-                <span>CSS</span>
-                <span>GOOGLE MAPS</span>
-            </div>
-
-            <a
-                href="halinga.html"
-                class="project-link"
-            >
-                OPEN PROJECT
-                <span>↗</span>
-            </a>
-
+        <div class="project-number">
+            03
         </div>
 
-    </article>
-
-
-    <!-- =================================================
-         PROJECT 03
-    ================================================== -->
-
-    <article class="project-feature">
-
-        <div class="project-image medical-image">
+        <div class="project-image">
 
             <img
                 src="medical.webp"
                 alt="Alternative Medicine Research"
             >
 
-            <span class="project-number">
-                03
+        </div>
+
+        <div class="project-info">
+
+            <p>ANDROID · PUBLISHED</p>
+
+            <h3>
+                Alternative Medicine
+                <span>Research</span>
+            </h3>
+
+            <p class="project-description">
+                Educational Android application with
+                searchable information and research references.
+            </p>
+
+            <span class="project-arrow">
+                →
             </span>
 
         </div>
 
-        <div class="project-content">
+    </a>
 
-            <div class="project-category">
-                ANDROID / PUBLISHED
-            </div>
 
-            <h3>
-                Alternative
-                <br>
-                <span>Medicine Research</span>
-            </h3>
+    <!-- PROJECT 04 -->
 
-            <p>
-                An educational Android application with searchable
-                information, structured data and links to scientific
-                research sources.
-            </p>
+    <a href="chic.html" class="project">
 
-            <div class="project-tags">
-                <span>KOTLIN</span>
-                <span>JETPACK COMPOSE</span>
-                <span>ROOM</span>
-                <span>PUBMED</span>
-            </div>
-
-            <a
-                href="alternative-medicine.html"
-                class="project-link"
-            >
-                OPEN PROJECT
-                <span>↗</span>
-            </a>
-
+        <div class="project-number">
+            04
         </div>
 
-    </article>
-
-
-    <!-- =================================================
-         PROJECT 04
-    ================================================== -->
-
-    <article class="project-feature reverse">
-
-        <div class="project-image chic-image">
+        <div class="project-image">
 
             <img
                 src="chic.jpg"
                 alt="Chic AI Fashion"
             >
 
-            <span class="project-number">
-                04
+        </div>
+
+        <div class="project-info">
+
+            <p>ANDROID · AI · IN DEVELOPMENT</p>
+
+            <h3>
+                Chic.
+                <span>AI Fashion</span>
+            </h3>
+
+            <p class="project-description">
+                Android fashion application combining
+                AI, image processing and digital avatars.
+            </p>
+
+            <span class="project-arrow">
+                →
             </span>
 
         </div>
 
-        <div class="project-content">
+    </a>
 
-            <div class="project-category">
-                ANDROID / AI / IN DEVELOPMENT
-            </div>
 
-            <h3>
-                Chic.
-                <br>
-                <span>AI Fashion</span>
-            </h3>
+    <!-- PROJECT 05 -->
 
-            <p>
-                An Android application combining fashion,
-                AI-generated avatars, image processing and
-                social-style content.
-            </p>
+    <a href="pickmi.html" class="project">
 
-            <div class="project-tags">
-                <span>KOTLIN</span>
-                <span>COMPOSE</span>
-                <span>AI</span>
-                <span>IMAGE PROCESSING</span>
-            </div>
-
-            <a
-                href="chic.html"
-                class="project-link"
-            >
-                OPEN PROJECT
-                <span>↗</span>
-            </a>
-
+        <div class="project-number">
+            05
         </div>
 
-    </article>
-
-
-    <!-- =================================================
-         PROJECT 05
-    ================================================== -->
-
-    <article class="project-feature">
-
-        <div class="project-image pickmi-image">
+        <div class="project-image">
 
             <img
                 src="pickmi.png"
                 alt="Pickmi"
             >
 
-            <span class="project-number">
-                05
+        </div>
+
+        <div class="project-info">
+
+            <p>FULL-STACK · IN DEVELOPMENT</p>
+
+            <h3>
+                Pickmi
+                <span>Dating Platform</span>
+            </h3>
+
+            <p class="project-description">
+                Full-stack web platform built with React,
+                Node.js and PostgreSQL.
+            </p>
+
+            <span class="project-arrow">
+                →
             </span>
 
         </div>
 
-        <div class="project-content">
+    </a>
 
-            <div class="project-category">
-                FULL-STACK / IN DEVELOPMENT
-            </div>
 
-            <h3>
-                Pickmi
-                <br>
-                <span>Dating Platform</span>
-            </h3>
+    <!-- PROJECT 06 -->
 
-            <p>
-                A full-stack web platform built with React,
-                Node.js and PostgreSQL, including authentication,
-                profiles, messaging and premium functionality.
-            </p>
+    <a href="forever-young.html" class="project">
 
-            <div class="project-tags">
-                <span>REACT</span>
-                <span>NODE.JS</span>
-                <span>POSTGRESQL</span>
-                <span>REST API</span>
-            </div>
-
-            <a
-                href="pickmi.html"
-                class="project-link"
-            >
-                OPEN PROJECT
-                <span>↗</span>
-            </a>
-
+        <div class="project-number">
+            06
         </div>
 
-    </article>
-
-
-    <!-- =================================================
-         PROJECT 06
-    ================================================== -->
-
-    <article class="project-feature reverse">
-
-        <div class="project-image forever-image">
+        <div class="project-image">
 
             <img
                 src="foreveryoung.webp"
                 alt="Forever Young"
             >
 
-            <span class="project-number">
-                06
-            </span>
-
         </div>
 
-        <div class="project-content">
+        <div class="project-info">
 
-            <div class="project-category">
-                ANDROID / IN DEVELOPMENT
-            </div>
+            <p>ANDROID · IN DEVELOPMENT</p>
 
             <h3>
                 Forever
-                <br>
                 <span>Young</span>
             </h3>
 
-            <p>
-                A wellness and longevity application focused on
-                educational content around healthy aging,
-                nutrition and lifestyle.
+            <p class="project-description">
+                Android wellness and longevity application.
             </p>
 
-            <div class="project-tags">
-                <span>KOTLIN</span>
-                <span>ANDROID</span>
-                <span>RESEARCH</span>
-                <span>UI</span>
-            </div>
-
-            <a
-                href="forever-young.html"
-                class="project-link"
-            >
-                OPEN PROJECT
-                <span>↗</span>
-            </a>
-
-        </div>
-
-    </article>
-
-
-    <!-- =================================================
-         PROJECT 07
-    ================================================== -->
-
-    <article class="project-feature">
-
-        <div class="project-image arcade-image">
-
-            <div class="arcade-placeholder">
-                ARCADE
-                <br>
-                GAMES
-            </div>
-
-            <span class="project-number">
-                07
+            <span class="project-arrow">
+                →
             </span>
 
         </div>
 
-        <div class="project-content">
+    </a>
 
-            <div class="project-category">
-                FULL-STACK / WEB
-            </div>
+
+    <!-- PROJECT 07 -->
+
+    <a href="arcade-games.html" class="project">
+
+        <div class="project-number">
+            07
+        </div>
+
+        <div class="project-image arcade">
+
+            <span>
+                ARCADE
+            </span>
+
+        </div>
+
+        <div class="project-info">
+
+            <p>FULL-STACK · WEB</p>
 
             <h3>
                 Arcade
-                <br>
-                <span>Games Platform</span>
+                <span>Games</span>
             </h3>
 
-            <p>
-                A web project with frontend and backend components,
-                user registration and ticket purchasing functionality.
+            <p class="project-description">
+                Web platform with frontend, backend,
+                registration and ticket functionality.
             </p>
 
-            <div class="project-tags">
-                <span>REACT</span>
-                <span>BACKEND</span>
-                <span>API</span>
-                <span>DATABASE</span>
-            </div>
-
-            <a
-                href="arcade-games.html"
-                class="project-link"
-            >
-                OPEN PROJECT
-                <span>↗</span>
-            </a>
+            <span class="project-arrow">
+                →
+            </span>
 
         </div>
 
-    </article>
+    </a>
 
 </section>
 
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<!-- ABOUT -->
 
 <section id="about" class="about">
 
-    <div class="section-number">
-        03 / 03
+    <div class="section-header">
+
+        <span>02</span>
+
+        <h2>About</h2>
+
     </div>
 
-    <div class="about-layout">
+    <div class="about-grid">
+
+        <h3>
+            Developer with a
+            <span>creative side.</span>
+        </h3>
+
+        <div class="about-content">
+
+            <p>
+                I'm a Junior Software Developer with a strong
+                interest in Android and web development.
+            </p>
+
+            <p>
+                I studied at Tallinna Tööstushariduskeskus
+                and qualified as a Junior Software Developer.
+            </p>
+
+            <p>
+                I gained professional software development
+                experience during my internship at Nets Estonia AS,
+                working with Java, React, Oracle PL/SQL,
+                PostgreSQL and payment technologies.
+            </p>
+
+            <p>
+                I continue developing my own applications and
+                websites, learning through real projects and
+                practical problem solving.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SKILLS -->
+
+    <div class="skills">
 
         <div>
-
-            <div class="red-title">
-                ABOUT ME
-            </div>
-
-            <h2>
-                Developer.
-                <br>
-                <span>Creator.</span>
-                <br>
-                Problem solver.
-            </h2>
-
+            <span>Android</span>
+            <p>Kotlin · Jetpack Compose · Room</p>
         </div>
 
-
-        <div class="about-text">
-
-            <p>
-                I studied at Tallinna Tööstushariduskeskus and
-                qualified as a Junior Software Developer.
-            </p>
-
-            <p>
-                I have professional software development experience
-                from Nets Estonia AS, where I worked with Java,
-                React, Oracle PL/SQL, PostgreSQL, payment technologies,
-                log analysis and professional development processes.
-            </p>
-
-            <p>
-                Outside professional development, I continue building
-                my own applications and websites. I enjoy taking an
-                idea from the first concept all the way to a working
-                product.
-            </p>
-
-            <p>
-                I am especially interested in Android development,
-                web development, databases, APIs and creating useful
-                digital products.
-            </p>
-
+        <div>
+            <span>Web</span>
+            <p>React · JavaScript · HTML · CSS</p>
         </div>
 
-    </div>
+        <div>
+            <span>Backend</span>
+            <p>Node.js · REST API · PostgreSQL</p>
+        </div>
 
-
-    <!-- TECHNOLOGIES -->
-
-    <div class="technology-wall">
-
-        <span>KOTLIN</span>
-        <span>JAVA</span>
-        <span>REACT</span>
-        <span>JAVASCRIPT</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>NODE.JS</span>
-        <span>POSTGRESQL</span>
-        <span>MYSQL</span>
-        <span>MONGODB</span>
-        <span>SQLITE</span>
-        <span>ANDROID</span>
-        <span>JETPACK COMPOSE</span>
-        <span>GIT</span>
-        <span>GITHUB</span>
-        <span>REST API</span>
-        <span>GOOGLE MAPS</span>
+        <div>
+            <span>Tools</span>
+            <p>Git · GitHub · Figma · Google Maps</p>
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+<!-- CONTACT -->
 
 <section class="contact">
 
-    <div class="contact-big">
+    <p class="eyebrow">
+        03 · CONTACT
+    </p>
 
-        <div class="red-title">
-            HAVE A PROJECT?
-        </div>
+    <h2>
+        Let's work<br>
+        <span>together.</span>
+    </h2>
 
-        <h2>
-            LET'S
-            <span>TALK.</span>
-        </h2>
+    <a
+        href="mailto:isabel.valkrusman@gmail.com"
+        class="email"
+    >
+        isabel.valkrusman@gmail.com →
+    </a>
 
-        <a
-            href="mailto:isabel.valkrusman@gmail.com"
-            class="contact-email"
-        >
-            isabel.valkrusman@gmail.com
-            <span>↗</span>
-        </a>
-
-    </div>
-
-
-    <div class="contact-links">
+    <div class="social-links">
 
         <a
             href="https://github.com/IsabelValkrusman"
             target="_blank"
         >
-            GITHUB ↗
+            GitHub
         </a>
 
         <a
             href="https://www.linkedin.com/in/isabel-valkrusman-35252b286"
             target="_blank"
         >
-            LINKEDIN ↗
-        </a>
-
-        <a
-            href="https://www.halingarestoran.com/"
-            target="_blank"
-        >
-            HALINGA ↗
+            LinkedIn
         </a>
 
     </div>
@@ -776,24 +506,20 @@
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
-    <div>
-        © 2026 ISABEL VALKRUSMAN
-    </div>
+    <span>
+        © 2026 Isabel Valkrusman
+    </span>
 
-    <div>
-        BUILT WITH CODE & CURIOSITY.
-    </div>
+    <span>
+        Tallinn, Estonia
+    </span>
 
 </footer>
 
-
-<script src="script.js"></script>
 
 </body>
 </html>
