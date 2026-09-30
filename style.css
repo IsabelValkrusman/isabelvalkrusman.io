@@ -1205,10 +1205,14 @@ footer {
 
         padding: 25px 6%;
     }
+
+
+
+
+}
    /* =====================================================
    SCROLL REVEAL
 ===================================================== */
-
 .reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -1231,7 +1235,5 @@ footer {
 
 .menu a.active span {
     color: #e00000;
-}
-
 }
 
