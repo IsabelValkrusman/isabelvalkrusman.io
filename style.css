@@ -1205,5 +1205,33 @@ footer {
 
         padding: 25px 6%;
     }
+   /* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ACTIVE MENU */
+
+.menu a.active {
+    color: #fff;
+}
+
+.menu a.active span {
+    color: #e00000;
+}
 
 }
+
