@@ -368,21 +368,13 @@ section {
 ===================================================== */
 
 .project {
-
     display: grid;
-
-    grid-template-columns: 50px 42% 1fr;
-
+    grid-template-columns: 50px 1fr 42%;
     align-items: center;
-
     gap: 45px;
-
-    padding: 45px 0;
-
+    padding: 70px 0;
     border-top: 1px solid #222;
-
     transition: .3s;
-
 }
 
 
