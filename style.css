@@ -191,24 +191,15 @@ img {
 
 }
 
-
 .hero h1 {
-
-    font-size: clamp(70px, 10vw, 145px);
-
-    line-height: .82;
-
-    letter-spacing: -8px;
-
-    font-weight: 800;
-
+    font-size: clamp(50px, 7vw, 95px);
+    line-height: .9;
+    letter-spacing: -4px;
+    font-weight: 700;
 }
 
-
 .hero h1 span {
-
-    color: #c90000;
-
+    color: #ffffff;
 }
 
 
