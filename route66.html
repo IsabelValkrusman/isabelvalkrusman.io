@@ -7,37 +7,74 @@
 
     <title>Route 66 Via Baltica — Isabel Valkrusman</title>
 
+    <meta name="description"
+          content="Discover Route 66 Via Baltica, an Android travel application for exploring Estonia, Latvia, Lithuania and Poland.">
+
+    <meta name="theme-color" content="#080d1c">
+
     <link rel="stylesheet" href="style.css">
 
     <style>
-
         /* =========================================
-           ROUTE 66 PAGE
+           ROUTE 66 — COMPACT PROJECT PAGE
+           Midnight navy + electric purple
         ========================================= */
 
         .route66-page {
-            width: min(1200px, 86%);
+            width: min(1320px, 92%);
             margin: 0 auto;
+            color: #f5f7ff;
         }
 
+        .route66-page .back-link {
+            display: inline-block;
+            margin: 22px 0 12px;
+            color: #a2acc7;
+            text-decoration: none;
+            transition: color .25s ease;
+        }
+
+        .route66-page .back-link:hover {
+            color: #b99aff;
+        }
 
         /* =========================================
-           HERO
+           HERO — TWO IMAGES + TITLE
         ========================================= */
 
         .route66-page .project-hero {
             display: grid;
-            grid-template-columns: 360px 1fr;
-            gap: 90px;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+            gap: clamp(28px, 4vw, 58px);
             align-items: center;
-            padding: 60px 0 100px;
+            padding: 24px 0 42px;
+            border-bottom: 1px solid rgba(164, 179, 220, .15);
+        }
+
+        .route66-page .project-hero-visuals {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            align-items: stretch;
+            gap: 16px;
+            min-width: 0;
         }
 
         .route66-page .project-hero-image {
-            width: 360px;
-            height: 360px;
+            width: 100%;
+            height: clamp(300px, 33vw, 440px);
             min-height: 0;
-            background: #111;
+            padding: 12px;
+            border: 1px solid rgba(168, 85, 247, .25);
+            border-radius: 22px;
+
+            background:
+                radial-gradient(
+                    ellipse at 50% 40%,
+                    rgba(124, 58, 237, .16),
+                    transparent 65%
+                ),
+                #0d152b;
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -45,34 +82,225 @@
         }
 
         .route66-page .project-hero-image img {
-            width: 300px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             display: block;
         }
 
+        .route66-page .project-hero-screen img {
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .route66-page .project-hero-info {
+            min-width: 0;
+        }
+
+        .route66-page .project-hero-info .project-number {
+            margin-bottom: 12px;
+            color: #b99aff;
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            letter-spacing: .12em;
+        }
+
+        .route66-page .project-hero-info h1 {
+            margin: 10px 0 18px;
+            font-size: clamp(42px, 5vw, 72px);
+            line-height: .98;
+            letter-spacing: -.06em;
+            overflow-wrap: anywhere;
+        }
+
+        .route66-page .project-hero-info .project-description {
+            margin-bottom: 20px;
+            color: #a2acc7;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .route66-page .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 0;
+        }
+
+        .route66-page .project-tags span {
+            padding: 7px 12px;
+            border: 1px solid rgba(164, 179, 220, .18);
+            border-radius: 999px;
+            background: rgba(16, 26, 51, .75);
+            color: #d8dff3;
+            font-size: 11px;
+        }
 
         /* =========================================
-           SCREENSHOTS
+           GENERAL SECTIONS
         ========================================= */
 
-        .route66-page .project-gallery {
-            padding: 100px 0;
-            border-bottom: 1px solid #222;
+        .route66-page .project-info-section,
+        .route66-page .project-section,
+        .route66-page .project-stack,
+        .route66-page .project-gallery,
+        .route66-page .project-links {
+            padding: 48px 0;
+            border-bottom: 1px solid rgba(164, 179, 220, .15);
         }
+
+        .route66-page .section-heading {
+            margin-bottom: 24px;
+        }
+
+        .route66-page .section-heading .detail-label {
+            margin-bottom: 10px;
+            color: #b99aff;
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            letter-spacing: .15em;
+        }
+
+        .route66-page .section-heading h2 {
+            margin-top: 10px;
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.05;
+            letter-spacing: -.045em;
+        }
+
+        /* =========================================
+           PROJECT INFORMATION
+        ========================================= */
+
+        .route66-page .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid rgba(164, 179, 220, .15);
+            border-radius: 16px;
+            background: rgba(164, 179, 220, .15);
+        }
+
+        .route66-page .info-item {
+            min-width: 0;
+            min-height: 92px;
+            padding: 20px;
+            background: #101a33;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .route66-page .info-item span {
+            color: #a2acc7;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: .1em;
+        }
+
+        .route66-page .info-item strong {
+            color: #f5f7ff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           FEATURES
+        ========================================= */
+
+        .route66-page .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .route66-page .feature-card {
+            min-width: 0;
+            min-height: 175px;
+            padding: 24px;
+            border: 1px solid rgba(164, 179, 220, .15);
+            border-radius: 16px;
+            background: #101a33;
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                background .25s ease;
+        }
+
+        .route66-page .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(168, 85, 247, .55);
+            background: #14203d;
+        }
+
+        .route66-page .feature-card > span {
+            color: #b99aff;
+            font-family: "DM Mono", monospace;
+            font-size: 12px;
+        }
+
+        .route66-page .feature-card h3 {
+            margin: 22px 0 10px;
+            color: #f5f7ff;
+            font-size: 19px;
+            line-height: 1.3;
+        }
+
+        .route66-page .feature-card p {
+            color: #a2acc7;
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        /* =========================================
+           TECHNOLOGIES
+        ========================================= */
+
+        .route66-page .stack-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 24px;
+            border: 1px solid rgba(164, 179, 220, .15);
+            border-radius: 16px;
+            background: #101a33;
+        }
+
+        .route66-page .stack-box span {
+            padding: 9px 14px;
+            border: 1px solid rgba(164, 179, 220, .18);
+            border-radius: 999px;
+            color: #d8dff3;
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            transition: .25s ease;
+        }
+
+        .route66-page .stack-box span:hover {
+            border-color: #a855f7;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           SCREENSHOTS — LARGER IMAGES
+        ========================================= */
 
         .route66-page .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 220px);
-            justify-content: space-between;
-            gap: 35px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
         }
 
         .route66-page .gallery-item {
-            width: 220px;
-            height: 400px;
+            width: 100%;
+            height: clamp(350px, 34vw, 460px);
             min-height: 0;
-            background: #111;
+            padding: 10px;
+            border: 1px solid rgba(164, 179, 220, .13);
+            border-radius: 16px;
+            background: #0d152b;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -85,101 +313,252 @@
             min-height: 0;
             object-fit: contain;
             display: block;
+            border-radius: 8px;
+            transition: transform .25s ease;
         }
 
+        .route66-page .gallery-item:hover img {
+            transform: scale(1.025);
+        }
+
+        /* =========================================
+           PROJECT LINKS
+        ========================================= */
+
+        .route66-page .links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .route66-page .project-link {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 24px;
+            border: 1px solid rgba(164, 179, 220, .15);
+            border-radius: 15px;
+            background: #101a33;
+            color: #ffffff;
+            transition: .25s ease;
+        }
+
+        .route66-page .project-link:hover {
+            transform: translateY(-3px);
+            border-color: rgba(168, 85, 247, .65);
+            background: #14203d;
+        }
+
+        .route66-page .project-link span {
+            color: #a2acc7;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: .1em;
+        }
+
+        .route66-page .project-link strong {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           NEXT PROJECT
+        ========================================= */
+
+        .route66-page .next-project {
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .route66-page .next-project p {
+            margin-bottom: 16px;
+            color: #a2acc7;
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: .15em;
+        }
+
+        .route66-page .next-project a {
+            color: #f5f7ff;
+            font-size: clamp(25px, 4vw, 42px);
+            letter-spacing: -.04em;
+            text-decoration: none;
+        }
+
+        .route66-page .next-project a span {
+            color: #b99aff;
+        }
+
+        .route66-page .next-project a:hover {
+            color: #c4a2ff;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .route66-page ~ .footer {
+            padding: 20px 4%;
+            border-top: 1px solid rgba(164, 179, 220, .15);
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            color: #a2acc7;
+            font-size: 12px;
+        }
+
+        .route66-page ~ .footer a {
+            color: #b99aff;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 1000px) {
+            .route66-page .project-hero {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .route66-page .project-hero-visuals {
+                max-width: 760px;
+            }
+
+            .route66-page .project-hero-image {
+                height: 360px;
+            }
+
+            .route66-page .feature-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .route66-page .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
 
         /* =========================================
            MOBILE
         ========================================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 600px) {
+            .route66-page {
+                width: 92%;
+            }
 
             .route66-page .project-hero {
-                grid-template-columns: 1fr;
-                gap: 50px;
+                padding: 16px 0 30px;
+                gap: 24px;
+            }
+
+            .route66-page .project-hero-visuals {
+                grid-template-columns: .85fr 1.15fr;
+                gap: 10px;
             }
 
             .route66-page .project-hero-image {
-                width: 300px;
-                height: 300px;
-            }
-
-            .route66-page .project-hero-image img {
-                width: 250px;
-                height: 250px;
-            }
-
-            .route66-page .gallery-grid {
-                grid-template-columns: repeat(2, 220px);
-                justify-content: center;
-            }
-
-        }
-
-
-        @media (max-width: 550px) {
-
-            .route66-page {
-                width: 90%;
-            }
-
-            .route66-page .project-hero-image {
-                width: 260px;
                 height: 260px;
+                padding: 7px;
+                border-radius: 15px;
             }
 
-            .route66-page .project-hero-image img {
-                width: 220px;
-                height: 220px;
+            .route66-page .project-hero-info h1 {
+                font-size: clamp(38px, 11vw, 54px);
+            }
+
+            .route66-page .project-hero-info .project-description {
+                font-size: 14px;
+            }
+
+            .route66-page .project-info-section,
+            .route66-page .project-section,
+            .route66-page .project-stack,
+            .route66-page .project-gallery,
+            .route66-page .project-links {
+                padding: 34px 0;
+            }
+
+            .route66-page .project-info-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .route66-page .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .route66-page .feature-card {
+                min-height: 0;
+                padding: 22px;
             }
 
             .route66-page .gallery-grid {
-                grid-template-columns: 1fr;
-                justify-items: center;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
             }
 
             .route66-page .gallery-item {
-                width: 220px;
-                height: 390px;
+                height: 300px;
+                padding: 6px;
             }
 
+            .route66-page .stack-box {
+                padding: 18px;
+            }
+
+            .route66-page .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .route66-page ~ .footer {
+                flex-direction: column;
+            }
         }
 
+        @media (max-width: 390px) {
+            .route66-page .project-hero-image {
+                height: 220px;
+            }
+
+            .route66-page .gallery-item {
+                height: 245px;
+            }
+        }
     </style>
-
 </head>
-
 
 <body>
 
-
 <main class="project-page route66-page">
 
-
-    <!-- =========================================
-         BACK
-    ========================================= -->
-
+    <!-- BACK -->
     <a href="index.html#work" class="back-link">
         ← Back to Work
     </a>
 
-
-    <!-- =========================================
-         HERO
-    ========================================= -->
-
+    <!-- HERO -->
     <section class="project-hero">
 
-        <div class="project-hero-image">
+        <div class="project-hero-visuals">
 
-            <img
-                src="logo2.png"
-                alt="Route 66 Via Baltica"
-            >
+            <div class="project-hero-image">
+                <img
+                    src="logo2.png"
+                    alt="Route 66 Via Baltica application logo"
+                >
+            </div>
+
+            <div class="project-hero-image project-hero-screen">
+                <img
+                    src="route66-map1.jpeg"
+                    alt="Route 66 Via Baltica application map"
+                >
+            </div>
 
         </div>
-
 
         <div class="project-hero-info">
 
@@ -198,39 +577,23 @@
             </p>
 
             <div class="project-tags">
-
                 <span>Kotlin</span>
                 <span>Android</span>
                 <span>Google Maps</span>
                 <span>Local Database</span>
-
             </div>
 
         </div>
 
     </section>
 
-
-
-    <!-- =========================================
-         PROJECT INFO
-    ========================================= -->
-
+    <!-- PROJECT INFO -->
     <section class="project-info-section">
 
         <div class="section-heading">
-
-            <p class="detail-label">
-                PROJECT INFO
-            </p>
-
-            <h2>
-                A travel app<br>
-                built for the road.
-            </h2>
-
+            <p class="detail-label">PROJECT INFO</p>
+            <h2>A travel app built for the road.</h2>
         </div>
-
 
         <div class="project-info-grid">
 
@@ -258,121 +621,65 @@
 
     </section>
 
-
-
-    <!-- =========================================
-         WHAT I BUILT
-    ========================================= -->
-
+    <!-- FEATURES -->
     <section class="project-section">
 
         <div class="section-heading">
-
-            <p class="detail-label">
-                WHAT I BUILT
-            </p>
-
-            <h2>
-                Main features
-            </h2>
-
+            <p class="detail-label">WHAT I BUILT</p>
+            <h2>Main features</h2>
         </div>
-
 
         <div class="feature-grid">
 
-
             <div class="feature-card">
-
                 <span>01</span>
-
-                <h3>
-                    Interactive Map
-                </h3>
-
+                <h3>Interactive Map</h3>
                 <p>
                     Explore locations along the Via Baltica
                     using Google Maps.
                 </p>
-
             </div>
 
-
             <div class="feature-card">
-
                 <span>02</span>
-
-                <h3>
-                    Country Navigation
-                </h3>
-
+                <h3>Country Navigation</h3>
                 <p>
                     Explore Estonia, Latvia, Lithuania
                     and Poland.
                 </p>
-
             </div>
 
-
             <div class="feature-card">
-
                 <span>03</span>
-
-                <h3>
-                    Places & Attractions
-                </h3>
-
+                <h3>Places & Attractions</h3>
                 <p>
                     Find restaurants, attractions and
                     useful locations along the route.
                 </p>
-
             </div>
 
-
             <div class="feature-card">
-
                 <span>04</span>
-
-                <h3>
-                    User Added Places
-                </h3>
-
+                <h3>User Added Places</h3>
                 <p>
                     Add and save your own locations
                     inside the application.
                 </p>
-
             </div>
-
 
         </div>
 
     </section>
 
-
-
-    <!-- =========================================
-         TECH STACK
-    ========================================= -->
-
+    <!-- TECH STACK -->
     <section class="project-stack">
 
         <div class="section-heading">
-
-            <p class="detail-label">
-                TECH STACK
-            </p>
-
-            <h2>
-                Technologies used
-            </h2>
-
+            <p class="detail-label">TECH STACK</p>
+            <h2>Technologies used</h2>
         </div>
 
-
         <div class="stack-box">
-
             <span>Kotlin</span>
             <span>Android Studio</span>
             <span>Jetpack</span>
@@ -380,123 +687,81 @@
             <span>XML / JSON</span>
             <span>Local Database</span>
             <span>SharedPreferences</span>
-
         </div>
 
     </section>
 
-
-
-    <!-- =========================================
-         SCREENSHOTS
-    ========================================= -->
-
+    <!-- SCREENSHOTS -->
     <section class="project-gallery">
 
         <div class="section-heading">
-
-            <p class="detail-label">
-                PROJECT
-            </p>
-
-            <h2>
-                App screenshots
-            </h2>
-
+            <p class="detail-label">PROJECT</p>
+            <h2>App screenshots</h2>
         </div>
-
 
         <div class="gallery-grid">
 
-
             <div class="gallery-item">
-
                 <img
                     src="route66-map1.jpeg"
                     alt="Route 66 Via Baltica map"
+                    loading="lazy"
                 >
-
             </div>
 
-
-
             <div class="gallery-item">
-
                 <img
                     src="route66-map2.jpeg"
-                    alt="Route 66 Via Baltica map"
+                    alt="Route 66 Via Baltica map view"
+                    loading="lazy"
                 >
-
             </div>
 
-            
             <div class="gallery-item">
-
                 <img
                     src="route66-places3.jpeg"
                     alt="Route 66 Via Baltica places"
+                    loading="lazy"
                 >
-
             </div>
 
-
             <div class="gallery-item">
-
                 <img
                     src="route66-places4.jpeg"
-                    alt="Route 66 Via Baltica places"
+                    alt="Route 66 Via Baltica attractions"
+                    loading="lazy"
                 >
-
             </div>
 
-
             <div class="gallery-item">
-
                 <img
                     src="route66-country5.jpeg"
                     alt="Route 66 Via Baltica country navigation"
+                    loading="lazy"
                 >
-
             </div>
 
-
             <div class="gallery-item">
-
                 <img
                     src="route66-details6.jpeg"
                     alt="Route 66 Via Baltica place details"
+                    loading="lazy"
                 >
-
             </div>
-
 
         </div>
 
     </section>
 
-
-
-    <!-- =========================================
-         LINKS
-    ========================================= -->
-
+    <!-- LINKS -->
     <section class="project-links">
 
         <div class="section-heading">
-
-            <p class="detail-label">
-                LINKS
-            </p>
-
-            <h2>
-                Explore the project
-            </h2>
-
+            <p class="detail-label">LINKS</p>
+            <h2>Explore the project</h2>
         </div>
 
-
         <div class="links-grid">
-
 
             <a
                 href="https://play.google.com/store/apps/details?id=com.baltica.route66"
@@ -504,15 +769,9 @@
                 rel="noopener noreferrer"
                 class="project-link"
             >
-
                 <span>GOOGLE PLAY</span>
-
-                <strong>
-                    View App ↗
-                </strong>
-
+                <strong>View App ↗</strong>
             </a>
-
 
             <a
                 href="https://github.com/IsabelValkrusman"
@@ -520,63 +779,35 @@
                 rel="noopener noreferrer"
                 class="project-link"
             >
-
                 <span>GITHUB</span>
-
-                <strong>
-                    View GitHub ↗
-                </strong>
-
+                <strong>View GitHub ↗</strong>
             </a>
-
 
         </div>
 
     </section>
 
-
-
-    <!-- =========================================
-         NEXT PROJECT
-    ========================================= -->
-
+    <!-- NEXT PROJECT -->
     <section class="next-project">
 
-        <p>
-            NEXT PROJECT
-        </p>
+        <p>NEXT PROJECT</p>
 
         <a href="halinga.html">
-
-            Halinga Restaurant & Arcade
-
-            <span>→</span>
-
+            Halinga Restaurant & Arcade <span>→</span>
         </a>
 
     </section>
 
-
 </main>
 
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
+<!-- FOOTER -->
 <footer class="footer">
-
-    <p>
-        © 2026 Isabel Valkrusman
-    </p>
+    <p>© 2026 Isabel Valkrusman</p>
 
     <a href="index.html">
         Back to portfolio ↑
     </a>
-
 </footer>
-
 
 </body>
 </html>
