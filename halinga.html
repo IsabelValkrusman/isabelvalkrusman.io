@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Halinga Restoran & Arcade — Isabel Valkrusman</title>
-    <meta name="description" content="Website development, multilingual content, website analytics and digital presence for Halinga Restoran & Arcade in Estonia.">
+    <meta name="description" content="Halinga Restoran & Arcade website development, multilingual content, web analytics and digital presence by Isabel Valkrusman.">
+    <meta name="theme-color" content="#080a10">
 
     <link rel="stylesheet" href="style.css">
 
@@ -21,11 +22,15 @@
             --project-purple: #a58bff;
         }
 
-        .project-page {
+        .project-page,
+        .footer {
             width: min(1440px, 94%);
             margin: 0 auto;
-            padding-top: 24px;
             box-sizing: border-box;
+        }
+
+        .project-page {
+            padding-top: 24px;
             color: var(--project-text);
         }
 
@@ -38,8 +43,8 @@
             display: inline-block;
             margin-bottom: 24px;
             color: inherit;
-            font-size: .9rem;
             text-decoration: none;
+            font-size: .9rem;
             opacity: .75;
         }
 
@@ -72,37 +77,45 @@
         }
 
         .project-hero-image img {
-            display: block;
             width: 100%;
             height: 100%;
+            display: block;
             object-fit: cover;
             object-position: center;
         }
 
         .project-number,
         .detail-label {
+            margin: 0 0 14px;
             font-size: .76rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
+        }
+
+        .project-number {
             opacity: .7;
-            margin: 0 0 14px;
+        }
+
+        .detail-label {
+            margin-bottom: 10px;
+            color: var(--project-blue);
         }
 
         .project-hero-info h1 {
+            margin: 0 0 22px;
             font-size: clamp(2.5rem, 4vw, 4.5rem);
             line-height: .98;
             letter-spacing: -2px;
-            margin: 0 0 22px;
             overflow-wrap: break-word;
         }
 
         .project-description {
-            font-size: 1.05rem;
-            line-height: 1.7;
             max-width: 490px;
             margin: 0 0 22px;
             color: var(--project-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         .project-tags,
@@ -137,10 +150,10 @@
         }
 
         .section-heading h2 {
+            margin: 0;
             font-size: clamp(1.8rem, 3vw, 3rem);
             line-height: 1.08;
             letter-spacing: -1px;
-            margin: 0;
         }
 
         .section-intro {
@@ -150,12 +163,7 @@
             line-height: 1.75;
         }
 
-        .detail-label {
-            margin-bottom: 10px;
-            color: var(--project-blue);
-        }
-
-        /* PROJECT INFO */
+        /* PROJECT INFORMATION */
 
         .project-info-section {
             display: grid;
@@ -178,9 +186,9 @@
         }
 
         .info-item span {
+            color: var(--project-muted);
             font-size: .72rem;
             letter-spacing: 1.5px;
-            color: var(--project-muted);
         }
 
         .info-item strong {
@@ -198,8 +206,8 @@
         }
 
         .feature-card {
-            padding: 22px 20px;
             min-height: 185px;
+            padding: 22px 20px;
             border: 1px solid var(--project-border);
             border-radius: 12px;
             background: var(--project-card);
@@ -213,26 +221,24 @@
 
         .feature-card > span {
             display: inline-block;
+            margin-bottom: 20px;
             color: var(--project-blue);
             font-size: .8rem;
             font-weight: 700;
-            margin-bottom: 20px;
         }
 
         .feature-card h3 {
+            margin: 0 0 10px;
             font-size: 1.08rem;
             line-height: 1.3;
-            margin: 0 0 10px;
         }
 
         .feature-card p {
+            margin: 0;
+            color: var(--project-muted);
             font-size: .9rem;
             line-height: 1.6;
-            color: var(--project-muted);
-            margin: 0;
         }
-
-        /* TECHNOLOGIES */
 
         .stack-box span {
             padding: 10px 15px;
@@ -240,10 +246,6 @@
         }
 
         /* ANALYTICS */
-
-        .analytics-section {
-            position: relative;
-        }
 
         .analytics-kicker {
             display: inline-flex;
@@ -268,19 +270,12 @@
             background: var(--project-blue);
         }
 
-        .analytics-note {
-            color: var(--project-muted);
-            font-size: .86rem;
-            line-height: 1.7;
-            margin: 20px 0 0;
-        }
-
         .analytics-image-wrap {
             margin: 30px 0;
             padding: 10px;
-            background: var(--project-card);
             border: 1px solid var(--project-border);
             border-radius: 14px;
+            background: var(--project-card);
         }
 
         .analytics-image-wrap img {
@@ -318,12 +313,16 @@
             );
         }
 
-        .metric-label {
+        .metric-label,
+        .metric-detail {
             display: block;
             color: var(--project-muted);
-            font-size: .78rem;
             line-height: 1.5;
+        }
+
+        .metric-label {
             margin-bottom: 14px;
+            font-size: .78rem;
         }
 
         .metric-value {
@@ -335,11 +334,8 @@
         }
 
         .metric-detail {
-            display: block;
             margin-top: 9px;
-            color: var(--project-muted);
             font-size: .77rem;
-            line-height: 1.5;
         }
 
         .analytics-layout {
@@ -370,11 +366,7 @@
         }
 
         .chart-row {
-            margin-bottom: 25px;
-        }
-
-        .chart-row:last-child {
-            margin-bottom: 0;
+            margin-bottom: 23px;
         }
 
         .chart-labels {
@@ -412,7 +404,7 @@
             margin-top: 20px;
             color: var(--project-muted);
             font-size: .76rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .traffic-table {
@@ -434,13 +426,13 @@
             font-weight: 500;
         }
 
+        .traffic-table td {
+            font-variant-numeric: tabular-nums;
+        }
+
         .traffic-table td:last-child,
         .traffic-table th:last-child {
             text-align: right;
-        }
-
-        .traffic-table td {
-            font-variant-numeric: tabular-nums;
         }
 
         .traffic-table tr:last-child td {
@@ -469,9 +461,9 @@
         .gallery-item {
             height: clamp(280px, 31vw, 440px);
             overflow: hidden;
+            border: 1px solid var(--project-border);
             border-radius: 12px;
             background: #181818;
-            border: 1px solid var(--project-border);
         }
 
         .gallery-item.gallery-large,
@@ -500,7 +492,7 @@
             transform: scale(1.025);
         }
 
-        /* LINKS */
+        /* PROJECT LINKS */
 
         .links-grid {
             display: grid;
@@ -516,8 +508,8 @@
             padding: 23px 20px;
             border: 1px solid var(--project-border);
             border-radius: 10px;
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
             transition: border-color .25s ease, background .25s ease;
         }
 
@@ -527,9 +519,9 @@
         }
 
         .project-link span {
+            color: var(--project-muted);
             font-size: .72rem;
             letter-spacing: 1.4px;
-            color: var(--project-muted);
         }
 
         .project-link strong {
@@ -545,10 +537,10 @@
         }
 
         .next-project p {
+            margin-bottom: 12px;
+            color: var(--project-muted);
             font-size: .75rem;
             letter-spacing: 2px;
-            color: var(--project-muted);
-            margin-bottom: 12px;
         }
 
         .next-project a {
@@ -556,10 +548,10 @@
             justify-content: space-between;
             align-items: center;
             gap: 20px;
+            color: inherit;
             font-size: clamp(1.5rem, 3vw, 2.5rem);
             line-height: 1.2;
             text-decoration: none;
-            color: inherit;
         }
 
         .next-project a span {
@@ -574,13 +566,11 @@
         /* FOOTER */
 
         .footer {
-            width: min(1440px, 94%);
-            margin: 0 auto;
-            padding: 22px 0 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 15px;
+            padding: 22px 0 28px;
             border-top: 1px solid var(--project-border);
             color: var(--project-muted);
             font-size: .85rem;
@@ -637,8 +627,12 @@
         /* MOBILE */
 
         @media (max-width: 760px) {
-            .project-page {
+            .project-page,
+            .footer {
                 width: 92%;
+            }
+
+            .project-page {
                 padding-top: 18px;
             }
 
@@ -688,8 +682,8 @@
             }
 
             .feature-card {
-                padding: 16px 13px;
                 min-height: 180px;
+                padding: 16px 13px;
             }
 
             .feature-card > span {
@@ -759,8 +753,8 @@
             }
 
             .project-tags span {
-                font-size: .75rem;
                 padding: 7px 10px;
+                font-size: .75rem;
             }
 
             .feature-card {
@@ -789,6 +783,8 @@
 
 <main class="project-page">
 
+    <!-- BACK -->
+
     <a href="index.html#work" class="back-link">
         ← Back to Work
     </a>
@@ -801,7 +797,7 @@
             <div class="project-hero-image">
                 <img
                     src="aut6.jpg"
-                    alt="Halinga Restoran & Arcade"
+                    alt="Halinga Restoran and retro arcade"
                     fetchpriority="high"
                 >
             </div>
@@ -945,30 +941,29 @@
 
     <section class="analytics-section" id="website-analytics">
 
-        <div class="analytics-kicker">
-            Website Analytics
-        </div>
+        <div class="analytics-kicker">Website Analytics</div>
 
         <div class="section-heading">
             <p class="detail-label">TRAFFIC & PERFORMANCE</p>
             <h2>Beyond the code.</h2>
             <p class="section-intro">
                 Website development is not only about design and code.
-                Server traffic reports also provide insight into how
-                a website is being accessed and used.
+                Server traffic reports provide insight into how a website
+                is accessed and used over time.
             </p>
         </div>
 
-        <!-- REAL REPORT IMAGE -->
+        <!-- ORIGINAL SERVER REPORT IMAGE -->
+
         <figure class="analytics-image-wrap">
             <img
                 src="analytics-august.jpg"
-                alt="August 2026 server traffic statistics for Halinga Restoran website"
+                alt="Original August 2026 server statistics report"
                 loading="lazy"
             >
             <figcaption>
                 Original server statistics report — August 2026.
-                The figures below summarize the recorded traffic.
+                Place your own cropped screenshot in the project image folder.
             </figcaption>
         </figure>
 
@@ -979,56 +974,77 @@
             <article class="metric-card">
                 <span class="metric-label">RECORDED VISITS</span>
                 <strong class="metric-value">2,177</strong>
-                <span class="metric-detail">
-                    August 2026
-                </span>
+                <span class="metric-detail">August 2026</span>
             </article>
 
             <article class="metric-card">
                 <span class="metric-label">PAGE VIEWS</span>
                 <strong class="metric-value">20,490</strong>
-                <span class="metric-detail">
-                    Pages requested during August
-                </span>
+                <span class="metric-detail">Pages requested during August</span>
             </article>
 
             <article class="metric-card">
                 <span class="metric-label">SERVER REQUESTS</span>
                 <strong class="metric-value">36,938</strong>
-                <span class="metric-detail">
-                    Total recorded hits in August
-                </span>
+                <span class="metric-detail">Total recorded hits in August</span>
             </article>
 
         </div>
 
-        <!-- MONTHLY COMPARISON -->
+        <!-- MONTHLY VISITS -->
 
         <div class="analytics-layout">
 
             <div class="analytics-panel">
 
-                <h3>Monthly website visits</h3>
+                <h3>Website visits in 2026</h3>
 
                 <p class="panel-description">
-                    Recorded visits across three reporting periods.
-                    August had the highest total of these reports.
+                    Recorded visits from the available monthly reports.
+                    August had the highest total among the months shown.
                 </p>
+
+                <div class="chart-row">
+                    <div class="chart-labels">
+                        <span>February 2026</span>
+                        <strong>765</strong>
+                    </div>
+                    <div class="chart-track" role="img"
+                         aria-label="February: 765 recorded visits">
+                        <span class="chart-fill" style="width:35.1%"></span>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-labels">
+                        <span>March 2026</span>
+                        <strong>1,525</strong>
+                    </div>
+                    <div class="chart-track" role="img"
+                         aria-label="March: 1525 recorded visits">
+                        <span class="chart-fill" style="width:70.1%"></span>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-labels">
+                        <span>May 2026</span>
+                        <strong>1,547</strong>
+                    </div>
+                    <div class="chart-track" role="img"
+                         aria-label="May: 1547 recorded visits">
+                        <span class="chart-fill" style="width:71.1%"></span>
+                    </div>
+                </div>
 
                 <div class="chart-row">
                     <div class="chart-labels">
                         <span>June 2026</span>
                         <strong>1,484</strong>
                     </div>
-                    <div
-                        class="chart-track"
-                        role="img"
-                        aria-label="June: 1484 visits, about 68.2 percent of the highest monthly value shown"
-                    >
-                        <span
-                            class="chart-fill"
-                            style="width:68.2%"
-                        ></span>
+                    <div class="chart-track" role="img"
+                         aria-label="June: 1484 recorded visits">
+                        <span class="chart-fill" style="width:68.2%"></span>
                     </div>
                 </div>
 
@@ -1037,15 +1053,9 @@
                         <span>August 2026</span>
                         <strong>2,177</strong>
                     </div>
-                    <div
-                        class="chart-track"
-                        role="img"
-                        aria-label="August: 2177 visits, the highest value shown"
-                    >
-                        <span
-                            class="chart-fill"
-                            style="width:100%"
-                        ></span>
+                    <div class="chart-track" role="img"
+                         aria-label="August: 2177 recorded visits">
+                        <span class="chart-fill" style="width:100%"></span>
                     </div>
                 </div>
 
@@ -1054,44 +1064,55 @@
                         <span>October 2026*</span>
                         <strong>913</strong>
                     </div>
-                    <div
-                        class="chart-track"
-                        role="img"
-                        aria-label="October: 913 visits recorded in the available report"
-                    >
-                        <span
-                            class="chart-fill"
-                            style="width:41.9%"
-                        ></span>
+                    <div class="chart-track" role="img"
+                         aria-label="October: 913 visits in the available report">
+                        <span class="chart-fill" style="width:41.9%"></span>
                     </div>
                 </div>
 
                 <p class="chart-footnote">
-                    *October is a partial-month report, photographed
-                    on 12 October 2026. It should not be compared
-                    directly with complete months.
+                    *October is a partial-month report. April and July
+                    figures are not included because reports were not provided.
+                    Bar lengths use August's 2,177 visits as the maximum.
                 </p>
 
             </div>
+
+            <!-- PAGE VIEWS AND HITS -->
 
             <div class="analytics-panel">
 
                 <h3>Traffic overview</h3>
 
                 <p class="panel-description">
-                    Comparison of page views and server requests
-                    in the available monthly reports.
+                    Page views and total server requests in the
+                    available monthly reports.
                 </p>
 
                 <table class="traffic-table">
                     <thead>
                         <tr>
                             <th>Month</th>
-                            <th>Page views</th>
+                            <th>Pages</th>
                             <th>Hits</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>February</td>
+                            <td>4,235</td>
+                            <td>7,043</td>
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>10,947</td>
+                            <td>17,564</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>4,719</td>
+                            <td>12,852</td>
+                        </tr>
                         <tr>
                             <td>June</td>
                             <td>4,788</td>
@@ -1111,21 +1132,24 @@
                 </table>
 
                 <p class="chart-footnote">
-                    Source: server traffic statistics provided
-                    for June, August and October 2026.
+                    Pages = recorded page requests.
+                    Hits = all recorded server requests, which can include
+                    images, scripts, stylesheets and other resources.
                 </p>
 
             </div>
 
         </div>
 
+        <!-- DATA LIMITATIONS -->
+
         <div class="analytics-caveat">
             <strong>About the data:</strong>
             These figures come from server log statistics.
-            Visits and requests may include automated bots,
-            and they do not directly measure unique human users,
-            restaurant visitors or sales. The reports show traffic
-            recorded by the server, not proven results caused by SEO.
+            Recorded visits may include automated bots and do not directly
+            measure unique human users, restaurant visitors or sales.
+            October may be incomplete. The reports show recorded traffic,
+            not proven results caused by SEO or marketing.
         </div>
 
     </section>
@@ -1146,47 +1170,31 @@
         <div class="gallery-grid">
 
             <div class="gallery-item gallery-large">
-                <img
-                    src="arcades1.png"
-                    alt="Halinga website — main page"
-                    loading="lazy"
-                >
+                <img src="arcades1.png"
+                     alt="Halinga website — main page" loading="lazy">
             </div>
 
             <div class="gallery-item gallery-large">
-                <img
-                    src="arcades2.png"
-                    alt="Halinga website — restaurant content"
-                    loading="lazy"
-                >
+                <img src="arcades2.png"
+                     alt="Halinga website — restaurant content" loading="lazy">
             </div>
 
             <div class="gallery-item gallery-large">
-                <img
-                    src="arcades3.png"
-                    alt="Halinga website — arcade presentation"
-                    loading="lazy"
-                >
+                <img src="arcades3.png"
+                     alt="Halinga website — arcade presentation" loading="lazy">
             </div>
 
             <div class="gallery-item gallery-large">
-                <img
-                    src="arcades4.png"
-                    alt="Halinga website — additional content"
-                    loading="lazy"
-                >
+                <img src="arcades4.png"
+                     alt="Halinga website — additional content" loading="lazy">
             </div>
 
             <div class="gallery-item gallery-large">
-                <img
-                    src="arcades7.png"
-                    alt="Halinga website — another page design"
-                    loading="lazy"
-                >
+                <img src="arcades7.png"
+                     alt="Halinga website — another page design" loading="lazy">
             </div>
 
         </div>
-
     </section>
 
     <!-- LINKS -->
@@ -1200,68 +1208,49 @@
 
         <div class="links-grid">
 
-            <a
-                href="https://www.halingarestoran.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-            >
+            <a href="https://www.halingarestoran.com/"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
                 <span>LIVE WEBSITE</span>
                 <strong>Visit Website ↗</strong>
             </a>
 
-            <a
-                href="https://github.com/IsabelValkrusman"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-            >
+            <a href="https://github.com/IsabelValkrusman"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
                 <span>GITHUB</span>
                 <strong>View GitHub ↗</strong>
             </a>
 
-            <a
-                href="https://www.instagram.com/HalingaRestoran"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-            >
+            <a href="https://www.instagram.com/HalingaRestoran"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
                 <span>INSTAGRAM</span>
                 <strong>Halinga Instagram ↗</strong>
             </a>
 
-            <a
-                href="https://www.tiktok.com/@halinga_arcade"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-            >
+            <a href="https://www.tiktok.com/@halinga_arcade"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
                 <span>TIKTOK</span>
                 <strong>Halinga TikTok ↗</strong>
             </a>
 
-            <a
-                href="https://www.youtube.com/watch?v=SRwWmcbs4wk"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-            >
+            <a href="https://www.youtube.com/watch?v=SRwWmcbs4wk"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
                 <span>YOUTUBE VIDEO</span>
                 <strong>Watch Video ↗</strong>
             </a>
 
-            <a
-                href="https://parnu.postimees.ee/8546954/halingas-naeb-ule-100-retromanguautomaadi-millel-nuudki-annab-kaeosavust-proovida"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-link"
-            >
+            <a href="https://parnu.postimees.ee/8546954/halingas-naeb-ule-100-retromanguautomaadi-millel-nuudki-annab-kaeosavust-proovida"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
                 <span>PRESS / MEDIA</span>
                 <strong>Pärnu Postimees Article ↗</strong>
             </a>
 
         </div>
-
     </section>
 
     <!-- NEXT PROJECT -->
