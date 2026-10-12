@@ -1,1517 +1,733 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Isabel Valkrusman | Software Developer Portfolio</title>
-    <meta name="description" content="Explore Isabel Valkrusman's software development portfolio, featuring Android applications, full-stack web projects, React development and AI-powered concepts.">
+
+    <meta
+        name="description"
+        content="Explore Isabel Valkrusman's software development portfolio, featuring Android applications, full-stack web projects, React development and AI-powered concepts."
+    >
+
     <meta name="theme-color" content="#080d1c">
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* =========================================
-           GLOBAL DESIGN
-        ========================================= */
-
-        :root {
-            --bg: #080d1c;
-            --bg-soft: #0c1224;
-            --card: #10182d;
-            --card-hover: #131d36;
-            --border: rgba(153, 173, 255, 0.15);
-            --text: #f3f5ff;
-            --muted: #a4aec7;
-            --blue: #7390ff;
-            --purple: #a58bff;
-            --gradient: linear-gradient(110deg, #7390ff, #b18cff);
-            --container: 1240px;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-
-        body {
-            margin: 0;
-            background:
-                radial-gradient(
-                    ellipse at 85% 5%,
-                    rgba(79, 94, 190, 0.10),
-                    transparent 32%
-                ),
-                var(--bg);
-            color: var(--text);
-            font-family: Inter, "Segoe UI", Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        .navbar,
-        .hero,
-        .work,
-        .about,
-        .contact,
-        footer {
-            width: min(var(--container), 90%);
-            margin-inline: auto;
-        }
-
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-
-        .navbar {
-            min-height: 86px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .logo {
-            flex-shrink: 0;
-            font-size: 1.45rem;
-            font-weight: 850;
-            letter-spacing: -1px;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--purple);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 36px;
-        }
-
-        .nav-links a,
-        .cv-link {
-            font-size: .9rem;
-            text-decoration: none;
-            color: var(--muted);
-            transition: color .2s ease;
-        }
-
-        .nav-links a:hover,
-        .cv-link:hover {
-            color: var(--purple);
-        }
-
-        .cv-link {
-            padding: 10px 21px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text);
-        }
-
-        .cv-link:hover {
-            border-color: var(--purple);
-        }
-
-        /* =========================================
-           HERO
-        ========================================= */
-
-        .hero {
-            min-height: 620px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
-            align-items: center;
-            gap: 80px;
-            padding-top: 75px;
-            padding-bottom: 95px;
-        }
-
-        .hero-text {
-            min-width: 0;
-        }
-
-        .eyebrow {
-            margin: 0 0 22px;
-            color: var(--blue);
-            font-size: .76rem;
-            font-weight: 750;
-            letter-spacing: 3px;
-        }
-
-        .hero h1 {
-            margin: 0;
-            font-size: clamp(4rem, 8vw, 7.3rem);
-            line-height: .91;
-            letter-spacing: -6px;
-            font-weight: 850;
-        }
-
-        .hero h1 span,
-        .about-grid h3 span,
-        .contact h2 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .intro-text {
-            max-width: 540px;
-            margin: 30px 0;
-            color: var(--muted);
-            font-size: 1.17rem;
-            line-height: 1.9;
-        }
-
-        .hero-links {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .primary-button {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 52px;
-            padding: 0 25px;
-            border-radius: 9px;
-            background: var(--gradient);
-            color: #080d1c;
-            font-size: .9rem;
-            font-weight: 750;
-            text-decoration: none;
-            transition: transform .25s ease, box-shadow .25s ease;
-        }
-
-        .primary-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(115, 144, 255, .2);
-        }
-
-        .text-link {
-            color: var(--text);
-            font-size: .92rem;
-            text-decoration: none;
-        }
-
-        .text-link:hover {
-            color: var(--purple);
-        }
-
-        .hero-photo {
-            width: 100%;
-            max-width: 430px;
-            aspect-ratio: 4 / 5;
-            justify-self: end;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: var(--card);
-            box-shadow: 0 30px 90px rgba(0, 0, 0, .2);
-        }
-
-        .hero-photo img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        /* =========================================
-           SECTION HEADINGS
-        ========================================= */
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 44px;
-        }
-
-        .section-header > span {
-            display: grid;
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-            place-items: center;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            color: var(--purple);
-            font-size: .9rem;
-            font-weight: 750;
-        }
-
-        .section-header h2 {
-            margin: 0;
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-        }
-
-        /* =========================================
-           PROJECTS — ONE PROJECT PER ROW
-        ========================================= */
-
-        .work {
-            padding-top: 55px;
-            padding-bottom: 100px;
-        }
-
-        .work .section-header {
-            margin-bottom: 45px;
-        }
-
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .project {
-            position: relative;
-            display: grid;
-            grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
-            align-items: stretch;
-            width: 100%;
-            min-width: 0;
-            min-height: 410px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: linear-gradient(
-                115deg,
-                rgba(17, 26, 49, .98),
-                rgba(12, 18, 36, .98)
-            );
-            text-decoration: none;
-            transition:
-                border-color .3s ease,
-                background .3s ease,
-                transform .3s ease,
-                box-shadow .3s ease;
-        }
-
-        .project:hover {
-            transform: translateY(-4px);
-            border-color: rgba(142, 151, 255, .6);
-            background: var(--card-hover);
-            box-shadow: 0 22px 65px rgba(0, 0, 0, .19);
-        }
-
-        /* Image stays on the left for every project */
-
-        .project-image {
-            position: relative;
-            min-width: 0;
-            min-height: 410px;
-            overflow: hidden;
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(115, 144, 255, .15),
-                    transparent 65%
-                ),
-                #0b1121;
-        }
-
-        .project-image img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            min-height: 410px;
-            object-fit: cover;
-            object-position: center;
-            transition: transform .6s ease;
-        }
-
-        .project:hover .project-image img {
-            transform: scale(1.045);
-        }
-
-        .project-image::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: linear-gradient(
-                90deg,
-                transparent 65%,
-                rgba(8, 13, 28, .2)
-            );
-        }
-
-        /* Arcade project visual */
-
-        .project-image.arcade {
-            display: grid;
-            place-items: center;
-            background:
-                radial-gradient(
-                    ellipse at center,
-                    rgba(113, 83, 255, .24),
-                    transparent 65%
-                ),
-                #080b17;
-        }
-
-        .project-image.arcade::before {
-            content: "INSERT COIN";
-            position: absolute;
-            top: 22px;
-            left: 22px;
-            z-index: 1;
-            color: var(--purple);
-            font-size: .7rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-        }
-
-        .project-image.arcade > span {
-            position: relative;
-            z-index: 1;
-            color: var(--text);
-            font-size: clamp(2.5rem, 5vw, 4.7rem);
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-shadow:
-                0 0 15px rgba(115, 144, 255, .6),
-                0 0 45px rgba(165, 139, 255, .4);
-        }
-
-        /* Project text */
-
-        .project-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            min-width: 0;
-            padding: clamp(28px, 4vw, 55px);
-        }
-
-        .project-topline {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 14px;
-            width: 100%;
-            margin-bottom: 27px;
-        }
-
-        .project-number {
-            color: var(--purple);
-            font-size: .82rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .project-category {
-            display: inline-flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 7px;
-            color: var(--blue);
-            font-size: .69rem;
-            font-weight: 750;
-            letter-spacing: 1.5px;
-            line-height: 1.7;
-        }
-
-        .project-status {
-            flex-shrink: 0;
-            padding: 6px 10px;
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            color: var(--muted);
-            font-size: .68rem;
-            font-weight: 650;
-        }
-
-        .project-info h3 {
-            margin: 0 0 18px;
-            font-size: clamp(1.9rem, 3vw, 3rem);
-            line-height: 1.12;
-            letter-spacing: -1.3px;
-            overflow-wrap: anywhere;
-        }
-
-        .project-info h3 span {
-            display: block;
-            margin-top: 5px;
-            color: var(--purple);
-        }
-
-        .project-description {
-            max-width: 620px;
-            margin: 0 0 17px;
-            color: var(--muted);
-            font-size: .96rem;
-            line-height: 1.9;
-        }
-
-        .project-details {
-            width: 100%;
-            margin-top: 5px;
-        }
-
-        .project-details h4 {
-            margin: 0 0 9px;
-            color: #e1e6ff;
-            font-size: .85rem;
-            font-weight: 750;
-        }
-
-        .project-details p {
-            margin: 0;
-            color: var(--muted);
-            font-size: .86rem;
-            line-height: 1.85;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 22px;
-        }
-
-        .project-tech span {
-            padding: 7px 11px;
-            border: 1px solid var(--border);
-            border-radius: 7px;
-            color: #d5ddff;
-            font-size: .72rem;
-            line-height: 1.4;
-        }
-
-        .project-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            margin-top: auto;
-            padding-top: 28px;
-        }
-
-        .project-bottom > span:first-child {
-            color: var(--muted);
-            font-size: .76rem;
-        }
-
-        .project-arrow {
-            display: grid;
-            width: 46px;
-            height: 46px;
-            flex-shrink: 0;
-            place-items: center;
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            color: var(--purple);
-            font-size: 1.4rem;
-            transition:
-                color .25s ease,
-                background .25s ease,
-                transform .25s ease;
-        }
-
-        .project:hover .project-arrow {
-            transform: translate(3px, -3px);
-            background: var(--gradient);
-            color: var(--bg);
-        }
-
-        /* =========================================
-           ABOUT
-        ========================================= */
-
-        .about {
-            padding-top: 45px;
-            padding-bottom: 110px;
-            border-top: 1px solid var(--border);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-            gap: 80px;
-            align-items: start;
-        }
-
-        .about-grid h3 {
-            margin: 0;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.1;
-            letter-spacing: -2px;
-        }
-
-        .about-content p {
-            margin: 0 0 19px;
-            color: var(--muted);
-            font-size: .98rem;
-            line-height: 1.95;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 55px;
-        }
-
-        .skills > div {
-            min-height: 135px;
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            background: var(--card);
-            transition: border-color .25s ease, transform .25s ease;
-        }
-
-        .skills > div:hover {
-            transform: translateY(-3px);
-            border-color: var(--blue);
-        }
-
-        .skills span {
-            display: block;
-            margin-bottom: 9px;
-            color: var(--purple);
-            font-size: 1rem;
-            font-weight: 750;
-        }
-
-        .skills p {
-            margin: 0;
-            color: var(--muted);
-            font-size: .86rem;
-            line-height: 1.8;
-        }
-
-        /* =========================================
-           CONTACT
-        ========================================= */
-
-        .contact {
-            padding-top: 75px;
-            padding-bottom: 85px;
-            border-top: 1px solid var(--border);
-        }
-
-        .contact h2 {
-            margin: 0 0 30px;
-            font-size: clamp(3.6rem, 8vw, 7rem);
-            line-height: .98;
-            letter-spacing: -4px;
-        }
-
-        .email {
-            display: inline-block;
-            margin-bottom: 32px;
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            text-decoration: none;
-            overflow-wrap: anywhere;
-        }
-
-        .email:hover {
-            color: var(--purple);
-        }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-
-        .social-links a {
-            color: var(--muted);
-            font-size: .9rem;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            color: var(--purple);
-        }
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            padding: 25px 0;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: .8rem;
-        }
-
-        /* =========================================
-           TABLET
-        ========================================= */
-
-        @media (max-width: 1000px) {
-            .hero {
-                gap: 45px;
-            }
-
-            .project {
-                grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-                min-height: 380px;
-            }
-
-            .project-image,
-            .project-image img {
-                min-height: 380px;
-            }
-
-            .project-info {
-                padding: 28px;
-            }
-
-            .project-info h3 {
-                font-size: clamp(1.8rem, 3vw, 2.4rem);
-            }
-
-            .project-topline {
-                flex-wrap: wrap;
-                margin-bottom: 20px;
-            }
-
-            .about-grid {
-                gap: 40px;
-            }
-        }
-
-        /* =========================================
-           MOBILE
-        ========================================= */
-
-        @media (max-width: 700px) {
-            .navbar,
-            .hero,
-            .work,
-            .about,
-            .contact,
-            footer {
-                width: 91%;
-            }
-
-            .navbar {
-                min-height: 75px;
-                gap: 12px;
-            }
-
-            .logo {
-                font-size: 1.15rem;
-            }
-
-            .nav-links {
-                gap: 14px;
-            }
-
-            .nav-links a,
-            .cv-link {
-                font-size: .76rem;
-            }
-
-            .cv-link {
-                padding: 8px 12px;
-            }
-
-            .hero {
-                min-height: auto;
-                grid-template-columns: 1fr;
-                gap: 38px;
-                padding-top: 65px;
-                padding-bottom: 75px;
-            }
-
-            .hero h1 {
-                font-size: clamp(3.8rem, 15vw, 6rem);
-                letter-spacing: -3.5px;
-            }
-
-            .intro-text {
-                font-size: 1rem;
-            }
-
-            .hero-photo {
-                width: min(100%, 390px);
-                max-width: none;
-                justify-self: start;
-                aspect-ratio: 5 / 4;
-            }
-
-            .work {
-                padding-top: 30px;
-                padding-bottom: 75px;
-            }
-
-            .section-header {
-                gap: 14px;
-                margin-bottom: 30px;
-            }
-
-            .section-header > span {
-                width: 42px;
-                height: 42px;
-            }
-
-            .section-header h2 {
-                font-size: 2.15rem;
-            }
-
-            .project-list {
-                gap: 22px;
-            }
-
-            /* One full-width card, with image above text */
-
-            .project {
-                grid-template-columns: minmax(0, 1fr);
-                min-height: auto;
-                border-radius: 16px;
-            }
-
-            .project-image,
-            .project-image img {
-                width: 100%;
-                min-height: 0;
-                height: clamp(250px, 65vw, 390px);
-            }
-
-            .project-image.arcade {
-                height: 290px;
-            }
-
-            .project-info {
-                min-height: 0;
-                padding: 25px 23px 23px;
-            }
-
-            .project-topline {
-                gap: 10px;
-                margin-bottom: 23px;
-            }
-
-            .project-info h3 {
-                margin-bottom: 16px;
-                font-size: clamp(2rem, 8vw, 2.7rem);
-            }
-
-            .project-description {
-                font-size: .92rem;
-                line-height: 1.85;
-            }
-
-            .project-details p {
-                font-size: .85rem;
-            }
-
-            .project-tech {
-                margin-top: 20px;
-            }
-
-            .project-bottom {
-                padding-top: 23px;
-            }
-
-            .about {
-                padding-top: 35px;
-                padding-bottom: 75px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .about-grid h3 {
-                font-size: 3rem;
-            }
-
-            .skills {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                margin-top: 35px;
-            }
-
-            .skills > div {
-                min-height: auto;
-                padding: 22px;
-            }
-
-            .contact {
-                padding-top: 60px;
-                padding-bottom: 65px;
-            }
-
-            .contact h2 {
-                font-size: clamp(3.5rem, 15vw, 5.5rem);
-                letter-spacing: -2px;
-            }
-
-            footer {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
-
-        @media (max-width: 390px) {
-            .navbar {
-                flex-wrap: wrap;
-                padding: 15px 0;
-            }
-
-            .nav-links {
-                order: 3;
-                width: 100%;
-                justify-content: flex-start;
-            }
-
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .project-info {
-                padding: 21px 17px;
-            }
-
-            .project-status {
-                font-size: .62rem;
-            }
-
-            .project-category {
-                font-size: .64rem;
-            }
-
-            .project-info h3 {
-                font-size: 1.9rem;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+    <!-- NAVIGATION -->
 
-<nav class="navbar">
-    <a href="index.html" class="logo">ISABEL<span>.</span></a>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            ISABEL<span>.</span>
+        </a>
 
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-    </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
 
-    <a href="CV.docx.pdf"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="cv-link">
-        CV ↗
-    </a>
-</nav>
+        <a
+            href="CV.docx.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cv-link"
+        >
+            CV ↗
+        </a>
+    </nav>
 
-<!-- HERO -->
 
-<header id="home" class="hero">
+    <!-- HERO -->
 
-    <div class="hero-text">
+    <header id="home" class="hero">
 
-        <p class="eyebrow">JUNIOR SOFTWARE DEVELOPER</p>
+        <div class="hero-text">
 
-        <h1>
-            Isabel<br>
-            <span>Valkrusman</span>
-        </h1>
+            <p class="eyebrow">
+                JUNIOR SOFTWARE DEVELOPER
+            </p>
 
-        <p class="intro-text">
-            I build Android applications and web projects from idea
-            to working product. My work combines software development,
-            practical problem-solving, user-focused design and a
-            curiosity for emerging technologies.
+            <h1>
+                Isabel<br>
+                <span>Valkrusman</span>
+            </h1>
+
+            <p class="intro-text">
+                I build Android applications and web projects from idea
+                to working product. My work combines software development,
+                practical problem-solving, user-focused design and a
+                curiosity for emerging technologies.
+            </p>
+
+            <div class="hero-links">
+
+                <a href="#work" class="primary-button">
+                    Explore my projects ↘
+                </a>
+
+                <a
+                    href="mailto:isabel.valkrusman@gmail.com"
+                    class="text-link"
+                >
+                    Contact me →
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-photo">
+            <img
+                src="profile.jpg"
+                alt="Portrait of Isabel Valkrusman"
+            >
+        </div>
+
+    </header>
+
+
+    <!-- SELECTED PROJECTS -->
+
+    <section id="work" class="work">
+
+        <div class="section-header">
+            <span>01</span>
+            <h2>Selected Work</h2>
+        </div>
+
+        <div class="project-list">
+
+
+            <!-- PROJECT 01: ROUTE 66 -->
+
+            <a href="route66.html" class="project">
+
+                <div class="project-image">
+                    <img
+                        src="logo2.png"
+                        alt="Route 66 Via Baltica travel application"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-topline">
+                        <span class="project-number">PROJECT 01</span>
+                        <span class="project-status">Published</span>
+                    </div>
+
+                    <p class="project-category">
+                        ANDROID · TRAVEL · MOBILE DEVELOPMENT
+                    </p>
+
+                    <h3>
+                        Route 66
+                        <span>Via Baltica</span>
+                    </h3>
+
+                    <p class="project-description">
+                        A travel-focused Android application designed to help
+                        users discover interesting destinations and experiences
+                        along the Via Baltica route through Estonia, Latvia,
+                        Lithuania and Poland.
+                    </p>
+
+                    <div class="project-details">
+
+                        <h4>Project overview</h4>
+
+                        <p>
+                            The concept combines route discovery, destination
+                            information and travel inspiration in one mobile
+                            experience. The project explores how digital tools
+                            can make road trips more engaging and help travellers
+                            find places worth visiting along their journey.
+                        </p>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>Jetpack Compose</span>
+                        <span>Google Maps</span>
+                    </div>
+
+                    <div class="project-bottom">
+                        <span>Mobile application · Travel discovery</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PROJECT 02: HALINGA -->
+
+            <a href="halinga.html" class="project">
+
+                <div class="project-image">
+                    <img
+                        src="halinga.jpg"
+                        alt="Halinga Restaurant and Arcade"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-topline">
+                        <span class="project-number">PROJECT 02</span>
+                        <span class="project-status">Live website</span>
+                    </div>
+
+                    <p class="project-category">
+                        WEB DEVELOPMENT · MARKETING · EVENTS
+                    </p>
+
+                    <h3>
+                        Halinga
+                        <span>Restaurant & Arcade</span>
+                    </h3>
+
+                    <p class="project-description">
+                        A real-world website and digital presence project for
+                        a family restaurant and retro arcade in Estonia.
+                        The venue combines restaurant services, classic arcade
+                        games and a unique retro entertainment experience.
+                    </p>
+
+                    <div class="project-details">
+
+                        <h4>My contribution</h4>
+
+                        <p>
+                            I work on website development, multilingual
+                            content, responsive layouts and presenting the
+                            venue's attractions online. The project also
+                            includes social media content, promotional ideas
+                            and event communication to help more people
+                            discover the restaurant and arcade.
+                        </p>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>React Router</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>SEO</span>
+                        <span>Social Media</span>
+                    </div>
+
+                    <div class="project-bottom">
+                        <span>Real-world project · Website and marketing</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PROJECT 03: ALTERNATIVE MEDICINE -->
+
+            <a href="alternative-medicine.html" class="project">
+
+                <div class="project-image">
+                    <img
+                        src="medical.webp"
+                        alt="Alternative Medicine Research application"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-topline">
+                        <span class="project-number">PROJECT 03</span>
+                        <span class="project-status">Published</span>
+                    </div>
+
+                    <p class="project-category">
+                        ANDROID · RESEARCH · EDUCATION
+                    </p>
+
+                    <h3>
+                        Alternative Medicine
+                        <span>Research</span>
+                    </h3>
+
+                    <p class="project-description">
+                        An educational Android application designed to
+                        organise information about alternative medicine
+                        and make research-related resources easier to explore.
+                    </p>
+
+                    <div class="project-details">
+
+                        <h4>Project overview</h4>
+
+                        <p>
+                            The project focuses on presenting information
+                            in a structured and accessible format. Searchable
+                            content and links to research sources help users
+                            navigate topics and find original material for
+                            further reading. The application encourages users
+                            to evaluate information and source quality.
+                        </p>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>Jetpack Compose</span>
+                        <span>Room</span>
+                    </div>
+
+                    <div class="project-bottom">
+                        <span>Mobile application · Information organisation</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PROJECT 04: CHIC AI FASHION -->
+
+            <a href="chic.html" class="project">
+
+                <div class="project-image">
+                    <img
+                        src="chic.jpg"
+                        alt="Chic AI Fashion application"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-topline">
+                        <span class="project-number">PROJECT 04</span>
+                        <span class="project-status">In development</span>
+                    </div>
+
+                    <p class="project-category">
+                        ANDROID · ARTIFICIAL INTELLIGENCE · FASHION
+                    </p>
+
+                    <h3>
+                        Chic.
+                        <span>AI Fashion</span>
+                    </h3>
+
+                    <p class="project-description">
+                        A fashion-focused mobile application concept exploring
+                        how artificial intelligence and digital visual tools
+                        can create a more personalised fashion experience.
+                    </p>
+
+                    <div class="project-details">
+
+                        <h4>Project direction</h4>
+
+                        <p>
+                            The concept explores AI-assisted fashion discovery,
+                            image-based features and digital avatars. The
+                            project investigates interface design, image
+                            processing and how intelligent features could
+                            support users in exploring different styles
+                            and visual ideas.
+                        </p>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>AI Concepts</span>
+                        <span>Image Processing</span>
+                        <span>UI/UX</span>
+                    </div>
+
+                    <div class="project-bottom">
+                        <span>Mobile application concept · AI and fashion</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PROJECT 05: PICKMI -->
+
+            <a href="pickmi.html" class="project">
+
+                <div class="project-image">
+                    <img
+                        src="pickmi.png"
+                        alt="Pickmi dating platform"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-topline">
+                        <span class="project-number">PROJECT 05</span>
+                        <span class="project-status">In development</span>
+                    </div>
+
+                    <p class="project-category">
+                        FULL-STACK · WEB APPLICATION · DATABASES
+                    </p>
+
+                    <h3>
+                        Pickmi
+                        <span>Dating Platform</span>
+                    </h3>
+
+                    <p class="project-description">
+                        A full-stack web application project focused on
+                        creating an interactive dating platform with a
+                        modern user interface and a backend-driven
+                        architecture.
+                    </p>
+
+                    <div class="project-details">
+
+                        <h4>Project direction</h4>
+
+                        <p>
+                            The project brings together frontend development,
+                            server-side functionality and database integration.
+                            It provides practical experience in organising
+                            application components, connecting interfaces
+                            to backend services and planning the data flows
+                            required by a larger web application.
+                        </p>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>REST API</span>
+                        <span>PostgreSQL</span>
+                    </div>
+
+                    <div class="project-bottom">
+                        <span>Full-stack application · Frontend and backend</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PROJECT 06: FOREVER YOUNG -->
+
+            <a href="forever-young.html" class="project">
+
+                <div class="project-image">
+                    <img
+                        src="foreveryoung.webp"
+                        alt="Forever Young wellness application"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-topline">
+                        <span class="project-number">PROJECT 06</span>
+                        <span class="project-status">In development</span>
+                    </div>
+
+                    <p class="project-category">
+                        ANDROID · AI · WELLNESS · RESEARCH
+                    </p>
+
+                    <h3>
+                        Forever
+                        <span>Young</span>
+                    </h3>
+
+                    <p class="project-description">
+                        An AI-powered wellness application concept designed
+                        to bring educational content, research and personal
+                        routine planning together in one mobile experience.
+                    </p>
+
+                    <div class="project-details">
+
+                        <h4>Project direction</h4>
+
+                        <p>
+                            Planned features include an AI chat assistant,
+                            research exploration, supplement information
+                            and personalised routines. The concept focuses
+                            on clear explanations, useful organisation and
+                            responsible communication, distinguishing
+                            educational information from professional
+                            medical advice.
+                        </p>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>Jetpack Compose</span>
+                        <span>AI Integration</span>
+                        <span>Research</span>
+                    </div>
+
+                    <div class="project-bottom">
+                        <span>Mobile application concept · AI assistant</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PROJECT 07: ARCADE GAMES -->
+
+            <a href="arcade-games.html" class="project">
+
+                <div class="project-image arcade">
+                    <span>ARCADE</span>
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-topline">
+                        <span class="project-number">PROJECT 07</span>
+                        <span class="project-status">Web development</span>
+                    </div>
+
+                    <p class="project-category">
+                        FULL-STACK · GAMING · WEB
+                    </p>
+
+                    <h3>
+                        Arcade
+                        <span>Games</span>
+                    </h3>
+
+                    <p class="project-description">
+                        A web-based arcade gaming project exploring
+                        an interactive platform with connected frontend
+                        and backend functionality.
+                    </p>
+
+                    <div class="project-details">
+
+                        <h4>Project direction</h4>
+
+                        <p>
+                            The project focuses on connecting interface
+                            components with application logic and server-side
+                            functionality. It explores application structure,
+                            user interaction and the data flows needed for
+                            gaming-related features. Registration, game access
+                            and ticket functionality can be documented
+                            according to the implemented version.
+                        </p>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Backend</span>
+                        <span>Web Development</span>
+                    </div>
+
+                    <div class="project-bottom">
+                        <span>Web application · Interactive gaming</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT ME -->
+
+    <section id="about" class="about">
+
+        <div class="section-header">
+            <span>02</span>
+            <h2>About me</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <h3>
+                Developer with a
+                <span>creative side.</span>
+            </h3>
+
+            <div class="about-content">
+
+                <p>
+                    I'm a Junior Software Developer with a strong interest
+                    in Android development, web technologies and building
+                    applications that solve practical problems.
+                </p>
+
+                <p>
+                    I studied at Tallinna Tööstushariduskeskus and qualified
+                    as a Junior Software Developer. My studies helped me
+                    develop a foundation in programming, databases,
+                    application architecture and software development.
+                </p>
+
+                <p>
+                    During my internship at NETS Estonia AS, I gained
+                    professional experience working with Java, React,
+                    Oracle PL/SQL, PostgreSQL and payment technologies.
+                    This experience strengthened my understanding of
+                    development in a professional environment.
+                </p>
+
+                <p>
+                    Outside formal work, I continue to develop websites
+                    and mobile application concepts. I enjoy combining
+                    technical skills with creativity, researching new
+                    technologies and learning through practical projects.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SKILLS -->
+
+        <div class="skills">
+
+            <div>
+                <span>Android Development</span>
+                <p>
+                    Kotlin · Jetpack Compose · Room ·
+                    Mobile UI development
+                </p>
+            </div>
+
+            <div>
+                <span>Frontend Development</span>
+                <p>
+                    React · JavaScript · HTML5 · CSS3 ·
+                    Responsive interfaces
+                </p>
+            </div>
+
+            <div>
+                <span>Backend & Databases</span>
+                <p>
+                    Node.js · REST APIs · PostgreSQL ·
+                    MySQL · MongoDB
+                </p>
+            </div>
+
+            <div>
+                <span>Tools & Technologies</span>
+                <p>
+                    Git · GitHub · Figma · Google Maps ·
+                    Visual Studio Code
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <p class="eyebrow">
+            03 · CONTACT
         </p>
 
-        <div class="hero-links">
-            <a href="#work" class="primary-button">Explore my projects ↘</a>
+        <h2>
+            Let's work<br>
+            <span>together.</span>
+        </h2>
 
-            <a href="mailto:isabel.valkrusman@gmail.com"
-               class="text-link">
-                Contact me →
+        <a
+            href="mailto:isabel.valkrusman@gmail.com"
+            class="email"
+        >
+            isabel.valkrusman@gmail.com →
+        </a>
+
+        <div class="social-links">
+
+            <a
+                href="https://github.com/IsabelValkrusman"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub ↗
             </a>
+
+            <a
+                href="https://www.linkedin.com/in/isabel-valkrusman-35252b286"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn ↗
+            </a>
+
+            <a
+                href="https://www.instagram.com/HalingaRestoran"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram ↗
+            </a>
+
         </div>
 
-    </div>
+    </section>
 
-    <div class="hero-photo">
-        <img src="profile.jpg"
-             alt="Portrait of Isabel Valkrusman">
-    </div>
 
-</header>
+    <!-- FOOTER -->
 
-<!-- PROJECTS -->
-
-<section id="work" class="work">
-
-    <div class="section-header">
-        <span>01</span>
-        <h2>Selected Work</h2>
-    </div>
-
-    <div class="project-list">
-
-        <!-- PROJECT 01 -->
-
-        <a href="route66.html" class="project">
-
-            <div class="project-image">
-                <img src="logo2.png"
-                     alt="Route 66 Via Baltica travel application"
-                     loading="lazy">
-            </div>
-
-            <div class="project-info">
-
-                <div class="project-topline">
-                    <span class="project-number">PROJECT 01</span>
-                    <span class="project-status">Published</span>
-                </div>
-
-                <p class="project-category">ANDROID · TRAVEL · MOBILE DEVELOPMENT</p>
-
-                <h3>Route 66 <span>Via Baltica</span></h3>
-
-                <p class="project-description">
-                    A travel-focused Android application designed to help
-                    users discover interesting destinations and experiences
-                    along the Via Baltica route through Estonia, Latvia,
-                    Lithuania and Poland.
-                </p>
-
-                <div class="project-details">
-                    <h4>Project overview</h4>
-                    <p>
-                        The concept combines route discovery, destination
-                        information and travel inspiration in one mobile
-                        experience. The project explores how digital tools
-                        can make road trips more engaging and help travellers
-                        find places worth visiting along their journey.
-                    </p>
-                </div>
-
-                <div class="project-tech">
-                    <span>Android</span>
-                    <span>Kotlin</span>
-                    <span>Jetpack Compose</span>
-                    <span>Google Maps</span>
-                </div>
-
-                <div class="project-bottom">
-                    <span>Mobile application · Travel discovery</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
-                </div>
-
-            </div>
-        </a>
-
-        <!-- PROJECT 02 -->
-
-        <a href="halinga.html" class="project">
-
-            <div class="project-image">
-                <img src="halinga.jpg"
-                     alt="Halinga Restaurant and Arcade website project"
-                     loading="lazy">
-            </div>
-
-            <div class="project-info">
-
-                <div class="project-topline">
-                    <span class="project-number">PROJECT 02</span>
-                    <span class="project-status">Live website</span>
-                </div>
-
-                <p class="project-category">WEB DEVELOPMENT · MARKETING · EVENTS</p>
-
-                <h3>Halinga <span>Restaurant & Arcade</span></h3>
-
-                <p class="project-description">
-                    A real-world website and digital presence project for
-                    a family restaurant and retro arcade in Estonia.
-                    The website presents the restaurant, its arcade
-                    machines, visitor information and special events.
-                </p>
-
-                <div class="project-details">
-                    <h4>My contribution</h4>
-                    <p>
-                        I work on the website, multilingual content,
-                        responsive layouts and the presentation of the
-                        venue's unique retro gaming experience. The wider
-                        project also includes social media content,
-                        promotional ideas and event communication to help
-                        people discover the restaurant and arcade.
-                    </p>
-                </div>
-
-                <div class="project-tech">
-                    <span>React</span>
-                    <span>JavaScript</span>
-                    <span>React Router</span>
-                    <span>CSS</span>
-                    <span>SEO</span>
-                    <span>Social Media</span>
-                </div>
-
-                <div class="project-bottom">
-                    <span>Real-world project · Website and digital presence</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
-                </div>
-
-            </div>
-        </a>
-
-        <!-- PROJECT 03 -->
-
-        <a href="alternative-medicine.html" class="project">
-
-            <div class="project-image">
-                <img src="medical.webp"
-                     alt="Alternative Medicine Research Android application"
-                     loading="lazy">
-            </div>
-
-            <div class="project-info">
-
-                <div class="project-topline">
-                    <span class="project-number">PROJECT 03</span>
-                    <span class="project-status">Published</span>
-                </div>
-
-                <p class="project-category">ANDROID · RESEARCH · EDUCATION</p>
-
-                <h3>Alternative Medicine <span>Research</span></h3>
-
-                <p class="project-description">
-                    An educational Android application designed to
-                    organise information about alternative medicine
-                    and make research-related resources easier to explore.
-                </p>
-
-                <div class="project-details">
-                    <h4>Project overview</h4>
-                    <p>
-                        The project focuses on presenting information
-                        in a structured, accessible format. Searchable
-                        content and links to research sources help users
-                        navigate topics and continue reading the original
-                        material. The goal is to make information easier
-                        to find while encouraging users to evaluate
-                        evidence and source quality.
-                    </p>
-                </div>
-
-                <div class="project-tech">
-                    <span>Android</span>
-                    <span>Kotlin</span>
-                    <span>Jetpack Compose</span>
-                    <span>Room</span>
-                </div>
-
-                <div class="project-bottom">
-                    <span>Mobile application · Information organisation</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
-                </div>
-
-            </div>
-        </a>
-
-        <!-- PROJECT 04 -->
-
-        <a href="chic.html" class="project">
-
-            <div class="project-image">
-                <img src="chic.jpg"
-                     alt="Chic AI Fashion application concept"
-                     loading="lazy">
-            </div>
-
-            <div class="project-info">
-
-                <div class="project-topline">
-                    <span class="project-number">PROJECT 04</span>
-                    <span class="project-status">In development</span>
-                </div>
-
-                <p class="project-category">ANDROID · ARTIFICIAL INTELLIGENCE · FASHION</p>
-
-                <h3>Chic. <span>AI Fashion</span></h3>
-
-                <p class="project-description">
-                    A fashion-focused mobile application concept exploring
-                    how artificial intelligence and digital visual tools
-                    can create a more personalised fashion experience.
-                </p>
-
-                <div class="project-details">
-                    <h4>Project direction</h4>
-                    <p>
-                        The concept explores AI-assisted fashion discovery,
-                        image-based features and digital avatars. The
-                        application is an opportunity to investigate
-                        interface design, image processing and how
-                        intelligent features could support users in
-                        exploring different styles and visual ideas.
-                    </p>
-                </div>
-
-                <div class="project-tech">
-                    <span>Android</span>
-                    <span>Kotlin</span>
-                    <span>AI Concepts</span>
-                    <span>Image Processing</span>
-                    <span>UI/UX</span>
-                </div>
-
-                <div class="project-bottom">
-                    <span>Mobile application concept · AI and fashion</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
-                </div>
-
-            </div>
-        </a>
-
-        <!-- PROJECT 05 -->
-
-        <a href="pickmi.html" class="project">
-
-            <div class="project-image">
-                <img src="pickmi.png"
-                     alt="Pickmi full-stack dating platform"
-                     loading="lazy">
-            </div>
-
-            <div class="project-info">
-
-                <div class="project-topline">
-                    <span class="project-number">PROJECT 05</span>
-                    <span class="project-status">In development</span>
-                </div>
-
-                <p class="project-category">FULL-STACK · WEB APPLICATION · DATABASES</p>
-
-                <h3>Pickmi <span>Dating Platform</span></h3>
-
-                <p class="project-description">
-                    A full-stack web application concept focused on
-                    creating an interactive dating platform with a
-                    modern user interface and a backend-driven architecture.
-                </p>
-
-                <div class="project-details">
-                    <h4>Project direction</h4>
-                    <p>
-                        The project brings together frontend development,
-                        server-side functionality and database integration.
-                        It provides practical experience in structuring
-                        an application into separate components, connecting
-                        the interface to backend services and planning
-                        the data flows required by a larger web product.
-                    </p>
-                </div>
-
-                <div class="project-tech">
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>REST API</span>
-                    <span>PostgreSQL</span>
-                </div>
-
-                <div class="project-bottom">
-                    <span>Full-stack application · Frontend and backend</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
-                </div>
-
-            </div>
-        </a>
-
-        <!-- PROJECT 06 -->
-
-        <a href="forever-young.html" class="project">
-
-            <div class="project-image">
-                <img src="foreveryoung.webp"
-                     alt="Forever Young AI wellness application"
-                     loading="lazy">
-            </div>
-
-            <div class="project-info">
-
-                <div class="project-topline">
-                    <span class="project-number">PROJECT 06</span>
-                    <span class="project-status">In development</span>
-                </div>
-
-                <p class="project-category">ANDROID · AI · WELLNESS · RESEARCH</p>
-
-                <h3>Forever <span>Young</span></h3>
-
-                <p class="project-description">
-                    An AI-powered wellness application concept designed
-                    to bring educational content, research and personal
-                    routine planning together in one mobile experience.
-                </p>
-
-                <div class="project-details">
-                    <h4>Project direction</h4>
-                    <p>
-                        Planned features include an AI chat assistant,
-                        research exploration, supplement information
-                        and personalised routines. The concept prioritises
-                        clear explanations, useful organisation and
-                        responsible communication, with a focus on
-                        distinguishing educational information from
-                        professional medical advice.
-                    </p>
-                </div>
-
-                <div class="project-tech">
-                    <span>Android</span>
-                    <span>Kotlin</span>
-                    <span>Jetpack Compose</span>
-                    <span>AI Integration</span>
-                    <span>Research</span>
-                </div>
-
-                <div class="project-bottom">
-                    <span>Mobile application concept · AI assistant</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
-                </div>
-
-            </div>
-        </a>
-
-        <!-- PROJECT 07 -->
-
-        <a href="arcade-games.html" class="project">
-
-            <div class="project-image arcade">
-                <span>ARCADE</span>
-            </div>
-
-            <div class="project-info">
-
-                <div class="project-topline">
-                    <span class="project-number">PROJECT 07</span>
-                    <span class="project-status">Web development</span>
-                </div>
-
-                <p class="project-category">FULL-STACK · GAMING · WEB</p>
-
-                <h3>Arcade <span>Games</span></h3>
-
-                <p class="project-description">
-                    A web-based arcade gaming project exploring the
-                    development of an interactive gaming platform with
-                    connected frontend and backend functionality.
-                </p>
-
-                <div class="project-details">
-                    <h4>Project direction</h4>
-                    <p>
-                        The project focuses on connecting interface
-                        components with application logic and server-side
-                        functionality. Planned and implemented features
-                        should be documented individually, including
-                        registration, game access and ticket-related
-                        functionality where supported by the current version.
-                    </p>
-                </div>
-
-                <div class="project-tech">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Backend</span>
-                    <span>Web Development</span>
-                </div>
-
-                <div class="project-bottom">
-                    <span>Web application · Interactive gaming</span>
-                    <span class="project-arrow" aria-hidden="true">↗</span>
-                </div>
-
-            </div>
-        </a>
-
-    </div>
-</section>
-
-<!-- ABOUT -->
-
-<section id="about" class="about">
-
-    <div class="section-header">
-        <span>02</span>
-        <h2>About me</h2>
-    </div>
-
-    <div class="about-grid">
-
-        <h3>
-            Developer with a
-            <span>creative side.</span>
-        </h3>
-
-        <div class="about-content">
-
-            <p>
-                I'm a Junior Software Developer with a strong interest
-                in Android development, web technologies and building
-                applications that solve practical problems.
-            </p>
-
-            <p>
-                I studied at Tallinna Tööstushariduskeskus and qualified
-                as a Junior Software Developer. My studies helped me
-                develop a foundation in programming, databases,
-                application architecture and software development.
-            </p>
-
-            <p>
-                During my internship at NETS Estonia AS, I gained
-                professional experience working with Java, React,
-                Oracle PL/SQL, PostgreSQL and payment technologies.
-                This experience strengthened my understanding of
-                development in a professional environment.
-            </p>
-
-            <p>
-                Outside formal work, I continue to develop websites
-                and mobile application concepts. I enjoy combining
-                technical skills with creativity, researching new
-                technologies and learning through practical projects.
-            </p>
-
-        </div>
-    </div>
-
-    <!-- SKILLS -->
-
-    <div class="skills">
-
-        <div>
-            <span>Android Development</span>
-            <p>
-                Kotlin · Jetpack Compose · Room ·
-                Mobile UI development
-            </p>
-        </div>
-
-        <div>
-            <span>Frontend Development</span>
-            <p>
-                React · JavaScript · HTML5 · CSS3 ·
-                Responsive interfaces
-            </p>
-        </div>
-
-        <div>
-            <span>Backend & Databases</span>
-            <p>
-                Node.js · REST APIs · PostgreSQL ·
-                MySQL · MongoDB
-            </p>
-        </div>
-
-        <div>
-            <span>Tools & Technologies</span>
-            <p>
-                Git · GitHub · Figma · Google Maps ·
-                Visual Studio Code
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-    <p class="eyebrow">03 · CONTACT</p>
-
-    <h2>
-        Let's work<br>
-        <span>together.</span>
-    </h2>
-
-    <a href="mailto:isabel.valkrusman@gmail.com"
-       class="email">
-        isabel.valkrusman@gmail.com →
-    </a>
-
-    <div class="social-links">
-
-        <a href="https://github.com/IsabelValkrusman"
-           target="_blank"
-           rel="noopener noreferrer">
-            GitHub ↗
-        </a>
-
-        <a href="https://www.linkedin.com/in/isabel-valkrusman-35252b286"
-           target="_blank"
-           rel="noopener noreferrer">
-            LinkedIn ↗
-        </a>
-
-    </div>
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-    <span>© 2026 Isabel Valkrusman</span>
-    <span>Tallinn, Estonia</span>
-</footer>
+    <footer>
+        <span>© 2026 Isabel Valkrusman</span>
+        <span>Tallinn, Estonia</span>
+    </footer>
 
 </body>
+
 </html>
