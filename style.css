@@ -408,41 +408,87 @@ section {
 
 
 
+
 /* =====================================================
-   REVERSE PROJECT
+   REVERSE PROJECT — ONE WIDE CARD PER ROW
 ===================================================== */
 
 .project-reverse {
-
-    grid-template-columns: 50px 1fr 42%;
-
+    display: grid;
+    grid-template-columns: 50px 38% minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    min-height: 340px;
+    box-sizing: border-box;
+    margin-bottom: 28px;
 }
 
-
+/* Project number */
 .project-reverse .project-number {
-
     grid-column: 1;
-
+    grid-row: 1;
+    align-self: start;
 }
 
-
+/* Project image on the left */
 .project-reverse .project-image {
-
-    grid-column: 3;
-
-    grid-row: 1;
-
-}
-
-
-.project-reverse .project-info {
-
     grid-column: 2;
-
     grid-row: 1;
-
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    overflow: hidden;
 }
 
+/* Project information on the right */
+.project-reverse .project-info {
+    grid-column: 3;
+    grid-row: 1;
+    min-width: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Image fills its area */
+.project-reverse .project-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .project-reverse {
+        grid-template-columns: 40px minmax(0, 1fr);
+        min-height: auto;
+    }
+
+    .project-reverse .project-number {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .project-reverse .project-image {
+        grid-column: 2;
+        grid-row: 1;
+        min-height: 220px;
+    }
+
+    .project-reverse .project-image img {
+        min-height: 220px;
+    }
+
+    .project-reverse .project-info {
+        grid-column: 2;
+        grid-row: 2;
+        padding: 24px;
+    }
+}
 
 
 /* =====================================================
