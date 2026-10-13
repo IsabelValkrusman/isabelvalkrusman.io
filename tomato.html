@@ -1,1 +1,772 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tomato AI — Isabel Valkrusman</title>
+
+    <meta
+        name="description"
+        content="Tomato AI — an AI-powered personal assistant concept for health, beauty, skincare and everyday wellness."
+    >
+
+    <meta name="theme-color" content="#080d1c">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tomato AI page-specific styles -->
+    <style>
+        .tomato-page {
+            --tomato-accent: #ff786f;
+            --tomato-light: #ffb2a8;
+            --tomato-green: #a5d6a7;
+        }
+
+        .tomato-page .project-hero {
+            grid-template-columns: 1fr 1fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .tomato-page .project-hero-visuals {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            align-items: center;
+            min-width: 0;
+        }
+
+        .tomato-page .tomato-visual {
+            min-height: 330px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            padding: 28px 18px;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid rgba(255, 120, 111, .25);
+            border-radius: 24px;
+            background:
+                radial-gradient(
+                    circle at 50% 25%,
+                    rgba(255, 120, 111, .16),
+                    transparent 55%
+                ),
+                linear-gradient(145deg, #171b30, #0d1425);
+        }
+
+        .tomato-page .tomato-visual:first-child {
+            transform: translateY(-12px);
+        }
+
+        .tomato-page .tomato-visual:last-child {
+            transform: translateY(12px);
+            background:
+                radial-gradient(
+                    circle at 50% 25%,
+                    rgba(165, 214, 167, .13),
+                    transparent 55%
+                ),
+                linear-gradient(145deg, #171b30, #0d1425);
+        }
+
+        .tomato-page .tomato-symbol {
+            width: 100px;
+            height: 100px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 178, 168, .35);
+            border-radius: 30px;
+            background: rgba(255, 120, 111, .10);
+            font-size: 54px;
+            box-shadow: 0 0 45px rgba(255, 120, 111, .08);
+        }
+
+        .tomato-page .tomato-visual h2 {
+            color: #fff;
+            font-size: 23px;
+            letter-spacing: -.04em;
+        }
+
+        .tomato-page .tomato-visual p {
+            color: #a2acc7;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .tomato-page .tomato-wordmark {
+            color: var(--tomato-accent);
+            font-size: 27px;
+            font-weight: 800;
+            letter-spacing: -.06em;
+        }
+
+        .tomato-page .tomato-wordmark span {
+            color: #fff;
+        }
+
+        .tomato-page .tomato-label {
+            color: var(--tomato-accent);
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .tomato-page .tomato-intro {
+            max-width: 760px;
+            color: var(--muted, #a2acc7);
+            font-size: 17px;
+            line-height: 1.95;
+        }
+
+        .tomato-page .tomato-intro p + p {
+            margin-top: 22px;
+        }
+
+        .tomato-page .tomato-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .tomato-page .tomato-feature {
+            min-height: 225px;
+            padding: 30px;
+            border: 1px solid var(--line, rgba(164, 179, 220, .15));
+            border-radius: 20px;
+            background: linear-gradient(
+                145deg,
+                rgba(17, 27, 53, .94),
+                rgba(11, 18, 37, .94)
+            );
+            transition: .25s ease;
+        }
+
+        .tomato-page .tomato-feature:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 120, 111, .5);
+        }
+
+        .tomato-page .tomato-feature-number {
+            color: var(--tomato-accent);
+            font-family: "DM Mono", monospace;
+            font-size: 12px;
+        }
+
+        .tomato-page .tomato-feature-icon {
+            display: block;
+            margin: 22px 0 15px;
+            font-size: 27px;
+        }
+
+        .tomato-page .tomato-feature h3 {
+            margin-bottom: 12px;
+            color: #f5f7ff;
+            font-size: 21px;
+        }
+
+        .tomato-page .tomato-feature p {
+            color: var(--muted, #a2acc7);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .tomato-page .tomato-flow {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .tomato-page .tomato-flow-item {
+            padding: 25px;
+            border-top: 2px solid var(--tomato-accent);
+            background: rgba(16, 26, 51, .65);
+        }
+
+        .tomato-page .tomato-flow-item span {
+            color: var(--tomato-accent);
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+        }
+
+        .tomato-page .tomato-flow-item h3 {
+            margin: 15px 0 10px;
+            font-size: 18px;
+        }
+
+        .tomato-page .tomato-flow-item p {
+            color: var(--muted, #a2acc7);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .tomato-page .tomato-note {
+            margin-top: 25px;
+            padding: 25px;
+            border: 1px solid rgba(255, 120, 111, .25);
+            border-radius: 16px;
+            background: rgba(255, 120, 111, .05);
+            color: var(--muted, #a2acc7);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .tomato-page .tomato-note strong {
+            color: var(--tomato-light);
+        }
+
+        .tomato-page .tomato-gallery-card {
+            min-height: 270px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px dashed rgba(255, 120, 111, .35);
+            border-radius: 20px;
+            background: rgba(16, 26, 51, .45);
+        }
+
+        .tomato-page .tomato-gallery-card > span {
+            font-size: 35px;
+        }
+
+        .tomato-page .tomato-gallery-card h3 {
+            font-size: 18px;
+        }
+
+        .tomato-page .tomato-gallery-card p {
+            max-width: 320px;
+            color: var(--muted, #a2acc7);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .tomato-page .tomato-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 14px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 120, 111, .3);
+            border-radius: 999px;
+            color: var(--tomato-light);
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+        }
+
+        .tomato-page .tomato-status::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--tomato-accent);
+        }
+
+        .tomato-page .tomato-next a span {
+            color: var(--tomato-accent);
+        }
+
+        @media (max-width: 900px) {
+            .tomato-page .project-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .tomato-page .tomato-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .tomato-page .project-hero-visuals {
+                gap: 10px;
+            }
+
+            .tomato-page .tomato-visual {
+                min-height: 240px;
+                padding: 18px 12px;
+                border-radius: 18px;
+            }
+
+            .tomato-page .tomato-visual:first-child,
+            .tomato-page .tomato-visual:last-child {
+                transform: none;
+            }
+
+            .tomato-page .tomato-symbol {
+                width: 72px;
+                height: 72px;
+                border-radius: 22px;
+                font-size: 39px;
+            }
+
+            .tomato-page .tomato-visual h2 {
+                font-size: 18px;
+            }
+
+            .tomato-page .tomato-feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tomato-page .tomato-feature {
+                min-height: auto;
+                padding: 25px;
+            }
+
+            .tomato-page .tomato-gallery-card {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body class="tomato-page">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            ISABEL<span>.</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#about">About</a>
+        </div>
+
+        <a href="CV.docx.pdf" target="_blank" class="cv-link">
+            CV
+        </a>
+    </nav>
+
+    <main class="project-page">
+
+        <!-- BACK LINK -->
+        <a href="index.html#work" class="back-link">
+            ← Back to projects
+        </a>
+
+        <!-- HERO -->
+        <header class="project-hero">
+
+            <div class="project-hero-visuals">
+
+                <div class="tomato-visual">
+                    <div class="tomato-symbol">🍅</div>
+
+                    <div>
+                        <div class="tomato-wordmark">
+                            Tomato <span>AI</span>
+                        </div>
+
+                        <p>Your personal wellness assistant</p>
+                    </div>
+                </div>
+
+                <div class="tomato-visual">
+                    <div class="tomato-symbol">✿</div>
+
+                    <div>
+                        <h2>Daily care</h2>
+
+                        <p>
+                            Beauty, skincare and healthy routines
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="project-hero-info">
+
+                <p class="tomato-label">
+                    ANDROID · AI · HEALTH &amp; BEAUTY
+                </p>
+
+                <h1>
+                    Tomato <span style="color: #ff786f;">AI</span>
+                </h1>
+
+                <p class="project-description">
+                    One personal assistant for health education,
+                    beauty, skincare and everyday self-care.
+                </p>
+
+                <div class="project-tags">
+                    <span>AI Assistant</span>
+                    <span>Android</span>
+                    <span>Wellness</span>
+                    <span>Skincare</span>
+                </div>
+
+                <div class="tomato-status">
+                    PROJECT IN DEVELOPMENT
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- PROJECT INFORMATION -->
+        <section class="project-info-section">
+
+            <div class="section-heading">
+                <p class="tomato-label">01 · PROJECT OVERVIEW</p>
+
+                <h2>
+                    A smarter way to organise your self-care.
+                </h2>
+            </div>
+
+            <div class="tomato-intro">
+
+                <p>
+                    Tomato AI is a planned Android application that
+                    combines an AI assistant with health education,
+                    beauty information and personal routine management.
+                </p>
+
+                <p>
+                    The idea is to create one convenient place where
+                    users can explore skincare advice, learn about
+                    wellness topics, research supplements and organise
+                    daily habits with reminders.
+                </p>
+
+                <p>
+                    Instead of searching across many different sources,
+                    users will be able to ask questions, explore useful
+                    information and build routines suited to their needs.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- FEATURES -->
+        <section class="project-section">
+
+            <div class="section-heading">
+                <p class="tomato-label">02 · MAIN FEATURES</p>
+
+                <h2>
+                    More than a chat assistant.
+                </h2>
+            </div>
+
+            <div class="tomato-feature-grid">
+
+                <article class="tomato-feature">
+                    <span class="tomato-feature-number">01</span>
+                    <span class="tomato-feature-icon">✦</span>
+
+                    <h3>AI Personal Assistant</h3>
+
+                    <p>
+                        Ask questions and explore topics related to
+                        beauty, skincare, wellness and general health
+                        education through an AI-powered chat.
+                    </p>
+                </article>
+
+                <article class="tomato-feature">
+                    <span class="tomato-feature-number">02</span>
+                    <span class="tomato-feature-icon">♡</span>
+
+                    <h3>Face Care &amp; Skincare</h3>
+
+                    <p>
+                        Learn about skincare basics, face-care steps,
+                        morning and evening routines, and ways to
+                        organise personal care.
+                    </p>
+                </article>
+
+                <article class="tomato-feature">
+                    <span class="tomato-feature-number">03</span>
+                    <span class="tomato-feature-icon">🌿</span>
+
+                    <h3>Alternative Medicine</h3>
+
+                    <p>
+                        Explore educational information about herbs,
+                        traditional approaches and natural remedies,
+                        with attention to evidence and safety.
+                    </p>
+                </article>
+
+                <article class="tomato-feature">
+                    <span class="tomato-feature-number">04</span>
+                    <span class="tomato-feature-icon">⌕</span>
+
+                    <h3>Research &amp; Supplements</h3>
+
+                    <p>
+                        Explore supplement information and research
+                        summaries to better understand evidence,
+                        limitations and possible safety concerns.
+                    </p>
+                </article>
+
+                <article class="tomato-feature">
+                    <span class="tomato-feature-number">05</span>
+                    <span class="tomato-feature-icon">◷</span>
+
+                    <h3>Daily Routines</h3>
+
+                    <p>
+                        Organise morning and evening routines for
+                        skincare, self-care and everyday wellness
+                        in one convenient place.
+                    </p>
+                </article>
+
+                <article class="tomato-feature">
+                    <span class="tomato-feature-number">06</span>
+                    <span class="tomato-feature-icon">♧</span>
+
+                    <h3>Personal Reminders</h3>
+
+                    <p>
+                        Plan reminders for everyday routines and
+                        receive prompts that help make self-care
+                        more consistent.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="project-section">
+
+            <div class="section-heading">
+                <p class="tomato-label">03 · USER EXPERIENCE</p>
+
+                <h2>
+                    From a question to a daily routine.
+                </h2>
+            </div>
+
+            <div class="tomato-flow">
+
+                <article class="tomato-flow-item">
+                    <span>STEP 01</span>
+
+                    <h3>Ask</h3>
+
+                    <p>
+                        Ask the AI assistant a question about skincare,
+                        wellness or another supported topic.
+                    </p>
+                </article>
+
+                <article class="tomato-flow-item">
+                    <span>STEP 02</span>
+
+                    <h3>Explore</h3>
+
+                    <p>
+                        Read educational information, explore available
+                        research and discover practical routine ideas.
+                    </p>
+                </article>
+
+                <article class="tomato-flow-item">
+                    <span>STEP 03</span>
+
+                    <h3>Build habits</h3>
+
+                    <p>
+                        Organise your personal routine and plan reminders
+                        for the activities you want to remember.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- TECHNOLOGY -->
+        <section class="project-stack">
+
+            <div class="section-heading">
+                <p class="tomato-label">04 · TECHNOLOGY</p>
+
+                <h2>
+                    Planned technology stack.
+                </h2>
+            </div>
+
+            <div class="stack-box">
+                <span>Android</span>
+                <span>Kotlin</span>
+                <span>Jetpack Compose</span>
+                <span>AI Integration</span>
+                <span>REST API</span>
+                <span>Local Storage</span>
+                <span>Notifications</span>
+            </div>
+
+            <p class="project-description" style="margin-top: 25px;">
+                These are planned technologies and capabilities.
+                The final stack will depend on the implementation.
+            </p>
+
+        </section>
+
+        <!-- GALLERY PLACEHOLDERS -->
+        <section class="project-gallery">
+
+            <div class="section-heading">
+                <p class="tomato-label">05 · DESIGN &amp; GALLERY</p>
+
+                <h2>
+                    The app experience.
+                </h2>
+            </div>
+
+            <div class="gallery-grid">
+
+                <div class="tomato-gallery-card">
+                    <span>🍅</span>
+
+                    <h3>AI Chat Interface</h3>
+
+                    <p>
+                        A future preview of the AI assistant and
+                        its conversation interface.
+                    </p>
+                </div>
+
+                <div class="tomato-gallery-card">
+                    <span>♡</span>
+
+                    <h3>Skincare Routine</h3>
+
+                    <p>
+                        A future preview of daily skincare steps
+                        and personal routine planning.
+                    </p>
+                </div>
+
+                <div class="tomato-gallery-card gallery-wide">
+                    <span>◷</span>
+
+                    <h3>Daily Reminders</h3>
+
+                    <p>
+                        A future preview of reminder settings,
+                        routine tracking and everyday self-care.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RESPONSIBLE AI -->
+        <section class="project-section">
+
+            <div class="section-heading">
+                <p class="tomato-label">06 · RESPONSIBLE AI</p>
+
+                <h2>
+                    Helpful information, responsibly presented.
+                </h2>
+            </div>
+
+            <div class="tomato-intro">
+                <p>
+                    Tomato AI is intended to support learning and
+                    everyday organisation. It is not designed to
+                    replace a doctor, dermatologist or other qualified
+                    healthcare professional.
+                </p>
+
+                <p>
+                    Health-related information should communicate
+                    uncertainty, distinguish research evidence from
+                    traditional claims and encourage professional advice
+                    when appropriate.
+                </p>
+            </div>
+
+            <div class="tomato-note">
+                <strong>Design principle:</strong>
+                the app should help users understand information and
+                organise routines without promising medical outcomes
+                or encouraging users to replace prescribed treatment.
+            </div>
+
+        </section>
+
+        <!-- PROJECT LINKS -->
+        <section class="project-links">
+
+            <div class="section-heading">
+                <p class="tomato-label">07 · PROJECT STATUS</p>
+
+                <h2>
+                    A concept in development.
+                </h2>
+            </div>
+
+            <div class="links-grid">
+
+                <div class="project-link">
+                    <div>
+                        <span>STATUS</span>
+                        <br>
+                        <strong>In development</strong>
+                    </div>
+
+                    <span>01</span>
+                </div>
+
+                <div class="project-link">
+                    <div>
+                        <span>PLATFORM</span>
+                        <br>
+                        <strong>Android application</strong>
+                    </div>
+
+                    <span>02</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NEXT PROJECT -->
+        <section class="next-project tomato-next">
+
+            <p>WANT TO EXPLORE MORE?</p>
+
+            <a href="index.html#work">
+                Back to <span>all projects →</span>
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <span>© 2026 Isabel Valkrusman</span>
+        <span>Tallinn, Estonia</span>
+    </footer>
+
+</body>
+</html>
+
